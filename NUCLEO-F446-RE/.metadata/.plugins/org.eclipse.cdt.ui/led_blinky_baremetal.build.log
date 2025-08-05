@@ -1,0 +1,10 @@
+22:12:21 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1016	     16	   1568	   2600	    a28	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+
+22:12:21 Build Finished. 0 errors, 0 warnings. (took 322ms)
+

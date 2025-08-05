@@ -1,0 +1,38 @@
+#define RCC_BASE   0x40023800
+#define GPIOA_BASE 0x40020000
+
+
+#define RCC_AHB1ENR_ADDR     (RCC_BASE + 0x30)
+#define GPIOA_MODER_ADDR     (GPIOA_BASE + 0x00)
+#define GPIOA_ODR_ADDR		 (GPIOA_BASE + 0x14)
+#define GPIOA_BSRR_ADDR      (GPIOA_BASE + 0x18)
+
+volatile unsigned int* pRCC_AHB1ENR = (volatile unsigned int*)RCC_AHB1ENR_ADDR;
+volatile unsigned int* pGPIOA_MODER = (volatile unsigned int*)GPIOA_MODER_ADDR;
+volatile unsigned int* pGPIOA_ODR   = (volatile unsigned int*)GPIOA_ODR_ADDR;
+volatile unsigned int* pGPIOA_BSRR  = (volatile unsigned int*)GPIOA_BSRR_ADDR;
+
+
+void delay(volatile int count)
+{
+	while (count--);
+}
+
+
+int main(void)
+{
+	*pRCC_AHB1ENR |= (1<< 0);
+
+	*pGPIOA_MODER &= ~(0b11 << 10);
+
+	*pGPIOA_MODER |= (1<<10);
+
+	while(1)
+	{
+		*pGPIOA_BSRR = (1<<5);
+
+		delay(500000);
+
+
+	}
+}

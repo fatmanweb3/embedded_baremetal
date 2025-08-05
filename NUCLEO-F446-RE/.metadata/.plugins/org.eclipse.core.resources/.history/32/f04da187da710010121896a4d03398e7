@@ -1,0 +1,20 @@
+#include "stm32f446xx.h"
+
+
+void delay_ms(uint32_t ms)
+{
+	for (volatile uint32_t i = 0 ; i < ms * 3000; i++)
+	{
+		__NOP();
+	}
+}
+
+void SystemClock_Config(void)
+{
+	RCC->CR != RCC_CR_HSEON;
+	while (!(RCC->CR & RCC_CR_HSERBY));
+
+
+}
+
+

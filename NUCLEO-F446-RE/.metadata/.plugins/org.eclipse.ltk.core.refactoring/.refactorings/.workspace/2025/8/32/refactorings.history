@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;led_blinky_bare_metal&apos;" deleteContents="true" description="Delete resource &apos;led_blinky_bare_metal&apos;" element1="/led_blinky_bare_metal" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1754383756834"/>&#x0A;<refactoring comment="Delete resource &apos;led_blinky_baremetal&apos;" deleteContents="true" description="Delete resource &apos;led_blinky_baremetal&apos;" element1="/led_blinky_baremetal" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1754405722056"/>
+</session>

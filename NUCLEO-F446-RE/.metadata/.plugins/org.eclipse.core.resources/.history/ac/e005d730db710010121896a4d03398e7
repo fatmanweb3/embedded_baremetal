@@ -1,0 +1,33 @@
+#include "stm32f446xx.h"
+
+
+void delay_ms(uint32_t ms)
+{
+	for (volatile uint32_t i = 0 ; i < ms * 3000; i++)
+	{
+		__NOP();
+	}
+}
+
+void SystemClock_Config(void)
+{
+	RCC->CR != RCC_CR_HSEON;
+	while (!(RCC->CR & RCC_CR_HSERBY));
+
+	RCCC ->PLLCFGR = (8 << RCC_PLLCFGR_PLLM_Pos) |
+					 (360 << RCC_PLLCFGR_PLLN_Pos) |
+					 (ob00 << RCC_PLLCFGR_PLLM_Pos) |
+					 RCC_PLLFGR_PLLSRC_HSE;
+
+	RCC.CR |= RCC_CR_PLLON;
+	while (!(RCC->CR & RCC_PR_PLLRDY));
+
+	RCC->CFGR |= RCCCFGR_SW_PLL;
+	while ((RCC->CFGR & RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL);
+
+
+
+
+}
+
+
