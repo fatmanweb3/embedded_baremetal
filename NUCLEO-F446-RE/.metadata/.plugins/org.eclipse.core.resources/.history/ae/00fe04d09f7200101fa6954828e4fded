@@ -1,0 +1,40 @@
+#define RCC_BASE   0x40023800 // addressing the peripheral rcc clock
+#define GPIOA_BASE 0x40020000 // addressing the GPIO ports.
+
+
+#define RCC_AHB1ENR_ADDR     (RCC_BASE + 0x30) // register mapping
+#define GPIOA_MODER_ADDR     (GPIOA_BASE + 0x00) // register mapping
+#define GPIOA_ODR_ADDR		 (GPIOA_BASE + 0x14)
+#define GPIOA_BSRR_ADDR      (GPIOA_BASE + 0x18)
+
+volatile unsigned int* pRCC_AHB1ENR = (volatile unsigned int*)RCC_AHB1ENR_ADDR;
+volatile unsigned int* pGPIOA_MODER = (volatile unsigned int*)GPIOA_MODER_ADDR;
+volatile unsigned int* pGPIOA_ODR   = (volatile unsigned int*)GPIOA_ODR_ADDR;
+volatile unsigned int* pGPIOA_BSRR  = (volatile unsigned int*)GPIOA_BSRR_ADDR;
+
+
+void delay(volatile int count)
+{
+	while (count--); // for delay
+}
+
+
+int main(void)
+{
+	*pRCC_AHB1ENR |= (1<< 0); // bit manipulation is to set and reset the particualr pins right.
+
+	*pGPIOA_MODER &= ~(0b11 << 10);// resetting the pin 5
+
+	*pGPIOA_MODER |= (1<<10); // setting the pin 5
+
+	while(1)
+	{
+		*pGPIOA_BSRR = (1<<5);
+
+		delay(500000);
+
+		*pGPIOA_BSRR = (1<<(5+16));
+
+		delay(500000);
+	}
+}

@@ -528,3 +528,183 @@ arm-none-eabi-size  led_blinky_baremetal.elf
    1016	     16	   1568	   2600	    a28	led_blinky_baremetal.elf
 Finished building: default.size.stdout
  
+14:13:42 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:85:21: error: 'GPIOA_EN' undeclared (first use in this function); did you mean 'GPIOA'?
+   85 |     RCC->AHB1ENR |= GPIOA_EN;
+      |                     ^~~~~~~~
+      |                     GPIOA
+../Core/Src/main.c:85:21: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:88:22: error: 'GPIOA_MODER5_MASK' undeclared (first use in this function)
+   88 |     GPIOA->MODER &= ~GPIOA_MODER5_MASK; // Clear Pin 5 mode
+      |                      ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:89:21: error: 'GPIOA_MODER5_OUT' undeclared (first use in this function)
+   89 |     GPIOA->MODER |= GPIOA_MODER5_OUT;   // Set Pin 5 as output
+      |                     ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:93:23: error: 'GPIOA_BSRR_SET5' undeclared (first use in this function)
+   93 |         GPIOA->BSRR = GPIOA_BSRR_SET5;  // Set Pin 5 high
+      |                       ^~~~~~~~~~~~~~~
+../Core/Src/main.c:95:23: error: 'GPIOA_BSRR_RESET5' undeclared (first use in this function)
+   95 |         GPIOA->BSRR = GPIOA_BSRR_RESET5; // Set Pin 5 low
+      |                       ^~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+14:14:04 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "led_blinky_baremetal.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\led_blinky_baremetal\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="led_blinky_baremetal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: led_blinky_baremetal.elf
+ 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+arm-none-eabi-objdump -h -S led_blinky_baremetal.elf  > "led_blinky_baremetal.list"
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+Finished building: led_blinky_baremetal.list
+ 
+14:14:14 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+14:14:42 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+14:18:58 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "led_blinky_baremetal.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\led_blinky_baremetal\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="led_blinky_baremetal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: led_blinky_baremetal.elf
+ 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+arm-none-eabi-objdump -h -S led_blinky_baremetal.elf  > "led_blinky_baremetal.list"
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+Finished building: led_blinky_baremetal.list
+ 
+14:19:03 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+14:19:42 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "led_blinky_baremetal.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\led_blinky_baremetal\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="led_blinky_baremetal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: led_blinky_baremetal.elf
+ 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+arm-none-eabi-objdump -h -S led_blinky_baremetal.elf  > "led_blinky_baremetal.list"
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+Finished building: led_blinky_baremetal.list
+ 
+14:19:45 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+17:59:00 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:65:18: error: duplicate member 'reservved'
+   65 |         uint32_t reservved[4];    // padding for offset 0x04 to 0x18
+      |                  ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+17:59:16 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:65:18: error: duplicate member 'reservved'
+   65 |         uint32_t reservved[4];    // padding for offset 0x04 to 0x18
+      |                  ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+17:59:19 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:65:18: error: duplicate member 'reservved'
+   65 |         uint32_t reservved[4];    // padding for offset 0x04 to 0x18
+      |                  ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+17:59:50 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "led_blinky_baremetal.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\led_blinky_baremetal\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="led_blinky_baremetal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: led_blinky_baremetal.elf
+ 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+arm-none-eabi-objdump -h -S led_blinky_baremetal.elf  > "led_blinky_baremetal.list"
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+Finished building: led_blinky_baremetal.list
+ 
+18:00:31 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+18:00:54 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "led_blinky_baremetal.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\led_blinky_baremetal\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="led_blinky_baremetal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: led_blinky_baremetal.elf
+ 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+arm-none-eabi-objdump -h -S led_blinky_baremetal.elf  > "led_blinky_baremetal.list"
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+Finished building: led_blinky_baremetal.list
+ 
+18:00:58 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+18:01:41 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "led_blinky_baremetal.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\led_blinky_baremetal\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="led_blinky_baremetal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: led_blinky_baremetal.elf
+ 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+arm-none-eabi-objdump -h -S led_blinky_baremetal.elf  > "led_blinky_baremetal.list"
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+Finished building: led_blinky_baremetal.list
+ 
+18:01:46 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 

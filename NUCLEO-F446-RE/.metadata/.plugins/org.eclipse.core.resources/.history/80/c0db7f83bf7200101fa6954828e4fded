@@ -61,7 +61,8 @@ typedef struct
 typedef struct
 {
 	volatile uint32_t MODER;  // 0x00: mode register
-	uint32_t reservved[5];    // padding for offset 0x04 to 0x10
+	uint32_t reservved[4];    // padding for offset 0x04 to 0x10
+	volatile uint32_t ODR;
 	volatile uint32_t BSRR;   //
 }GPIOA_TypeDef;
 
@@ -89,7 +90,7 @@ void delay(volatile uint32_t count) {
 
 int main(void) {
     // Enable GPIOA clock
-    RCC->AHB1ENR |= GPIOA_EN; //
+    RCC->AHB1ENR |= GPIOA_EN;
 
     // Configure GPIOA Pin 5 as output
     GPIOA->MODER &= ~GPIOA_MODER5_MASK; // Clear Pin 5 mode

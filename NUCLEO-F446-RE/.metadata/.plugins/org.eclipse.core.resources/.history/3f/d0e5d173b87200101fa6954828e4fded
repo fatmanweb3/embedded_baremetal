@@ -1,12 +1,12 @@
 //#define RCC_BASE   0x40023800 // addressing the peripheral rcc clock
 //#define GPIOA_BASE 0x40020000 // addressing the GPIO ports.
 //
-
+//
 //#define RCC_AHB1ENR_ADDR     (RCC_BASE + 0x30) // register mapping
 //#define GPIOA_MODER_ADDR     (GPIOA_BASE + 0x00) // register mapping
 //#define GPIOA_ODR_ADDR		 (GPIOA_BASE + 0x14)
 //#define GPIOA_BSRR_ADDR      (GPIOA_BASE + 0x18)
-
+//
 //volatile unsigned int* pRCC_AHB1ENR = (volatile unsigned int*)RCC_AHB1ENR_ADDR;
 //volatile unsigned int* pGPIOA_MODER = (volatile unsigned int*)GPIOA_MODER_ADDR;
 //volatile unsigned int* pGPIOA_ODR   = (volatile unsigned int*)GPIOA_ODR_ADDR;
@@ -61,7 +61,8 @@ typedef struct
 typedef struct
 {
 	volatile uint32_t MODER;  // 0x00: mode register
-	uint32_t reservved[5];    // padding for offset 0x04 to 0x10
+	uint32_t reservved[4];    // padding for offset 0x04 to 0x10
+	volatile uint32_t ODR;
 	volatile uint32_t BSRR;   //
 }GPIOA_TypeDef;
 
@@ -89,7 +90,7 @@ void delay(volatile uint32_t count) {
 
 int main(void) {
     // Enable GPIOA clock
-    RCC->AHB1ENR |= GPIOA_EN; //
+    RCC->AHB1ENR |= GPIOA_EN;
 
     // Configure GPIOA Pin 5 as output
     GPIOA->MODER &= ~GPIOA_MODER5_MASK; // Clear Pin 5 mode

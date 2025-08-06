@@ -61,7 +61,8 @@ typedef struct
 typedef struct
 {
 	volatile uint32_t MODER;  // 0x00: mode register
-	uint32_t reservved[5];    // padding for offset 0x04 to 0x10
+	uint32_t reservved[4];    // padding for offset 0x04 to 0x10
+	uint32_t reservved[4];    // padding for offset 0x04 to 0x18
 	volatile uint32_t BSRR;   //
 }GPIOA_TypeDef;
 
