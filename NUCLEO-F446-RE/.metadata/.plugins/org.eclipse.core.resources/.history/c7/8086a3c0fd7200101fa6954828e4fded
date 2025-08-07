@@ -1,0 +1,87 @@
+#include <stdint.h>
+
+//base address mapping
+#define RCC_BASE 0x40023800 //definng the rcc base address for clock
+#define GPIOA_BASE 0x4002000 //defining for GPIOA Port
+
+//creating a typedef for rcc register struct
+typedef struct
+{
+	uint32_t _offset[12];
+	volatile uint32_t AHB1ENR;
+}RCC_Typedef;
+
+//GPIOA reister sturture
+typedef struct
+{
+	volatile uint32_t MODER;   // 0x00
+	volatile uint32_t OTYPER;  //0x04
+	volatile uint32_t OSPEEDER; //0x08
+	volatile uint32_t PUPDR; //0x0C
+	volatile uint32_t IDR; //0x10
+	uint32_t _offset[1];
+	volatile uint32_t BSRR; //0x18
+}GPIOA_Typedef;
+
+
+
+//mapping peripherals to the base address
+
+#define RCC   ((RCC_Typedef *)RCC_BASE)
+#define GPIOA ((GPIOA_Typedef *)GPIOA_BASE)
+
+//adding a function for the delay
+
+void delay(volatile uint32_t count)
+{
+	while(count--)
+	{
+		__asm("nop");
+	}
+}
+
+//bit masking
+
+#define GPIOA_ENABLE           (1U << 0)  // setbit for enabling the clock
+#define GPIOA_MODER5_OUTPUT    (1U << 10)  // settting the bit for output mode
+#define GPIOA_MODER5_MASK      (3U << 10) // setting the bit for clearimg out
+
+#define GPIOA_MODER9_OUTPUT    (1U << 18) // setting the bit for output mode
+#define GPIOA_MODER9_MASK      (3U << 18) // clearing the bit so i created a mask
+
+#define GPIOA_MODER0_INPUT     (0U << 0) // creating a bit to set for input mode for input mode it should be 0
+#define GPIOA_MODER0_MASK      (3U << 0) // creating a bit to mask to clear out the moder
+#define GPIOA_PUPDR0_PU        (1U << 0) // setting the pin to pull-up mode
+#define GPIOA_PUPDR0_MASK      (3U << 0) // setting a bit mask for clearing the bit field
+
+#define GPIOA_IDR0_INPUT       (1U << 0) // setting a bit to pin 0 for reading the input
+#define GPIOA_BSRR5_SET        (1U << 5) // setting a bit for enabling in the pin 5)
+#define GPIOA_BSRR5_RESET      (1U << (5 + 16)) // whyadding 16 is simple to reset a particular pit bsrr register we need to add it by the total no of register / 2, 32 /2 is 16
+#define GPIOA_BSRR9_SET        (1U << 9)
+#define GPIOA_BSRR9_RESET      (1U << 9  + 16))
+
+int main(void)
+{
+	RCC->AHB1ENR |= GPIOA_ENABLE; // enabling the rcc clock
+
+	GPIOA->MODER &= ~(GPIOA_MODER5_MASK); // clearing the bitfield first
+    GPIOA->MODER |= GPIOA_MODER5_OUTPUT;  // setting the bit for output mode mode
+
+    GPIOA->MODER &= ~(GPIOA_MODER9_MASK);
+    GPIOA->MODER |= GPIOA_MODER9_OUTPUT;
+
+    GPIOA->MODER &= ~(GPIOA_MODER0_MASK);
+    GPIOA->MODER |= GPIOA_MODER0_INPUT;
+    GPIOA->PUPDR &= ~(GPIOA_PUPDR0_MASK);
+    GPIOA->PUPDR |= GPIOA_PUPDR0_PU;
+
+    int led6_state = 0;  // 0 means off, 1 means on
+    int last_button_state = 1; // 1 = not pressed due to pull-up
+
+    while (1)
+    {
+    	GPIOA->BSRR = GPIOA_BSRR5_SET;
+
+    }
+
+}

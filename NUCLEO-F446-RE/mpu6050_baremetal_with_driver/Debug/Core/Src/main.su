@@ -1,0 +1,12 @@
+../Core/Src/main.c:93:5:main	128	static
+../Core/Src/main.c:120:6:delay	16	static,ignoring_inline_asm
+../Core/Src/main.c:126:6:uart_init	4	static
+../Core/Src/main.c:140:6:uart_write	16	static
+../Core/Src/main.c:147:6:i2c_init	4	static
+../Core/Src/main.c:169:6:i2c_start	4	static
+../Core/Src/main.c:174:6:i2c_stop	4	static
+../Core/Src/main.c:179:6:i2c_write_addr	16	static
+../Core/Src/main.c:185:6:i2c_write_data	16	static
+../Core/Src/main.c:191:9:i2c_read_byte	16	static
+../Core/Src/main.c:201:6:mpu6050_init	64	static
+../Core/Src/main.c:231:6:mpu6050_read_accel	24	static

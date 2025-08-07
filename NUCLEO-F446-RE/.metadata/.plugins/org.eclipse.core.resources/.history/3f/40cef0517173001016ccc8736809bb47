@@ -1,0 +1,70 @@
+#include <stdint.h> // for std variable
+#include <stdio.h> // for printf statements
+
+// defining the base address
+#define RCC_BASE       0x40023800
+#define GPIOA_BASE     0x40020000
+#define GPIOB_BASE     0x40020400
+#define USART1_BASE    0x40011000
+#define I2C_BASE       0x40005400
+
+
+// defingint eh MPU6050 BASE Address
+#define MPU6050_ADDR              (0x68 << 1)
+#define MPU6050_WHO_AM_I           0x75
+#define MPU6050_PWR_MGMT_1_REG     0x6B
+#define MPU6050_ACCEL_XOUT_H_REG   0x3B
+
+// RCC (Reset and Clock Control)
+typedef struct {
+    volatile uint32_t CR;
+    volatile uint32_t PLLCFGR;
+    volatile uint32_t CFGR;
+    volatile uint32_t CIR;
+    volatile uint32_t AHB1RSTR;
+    volatile uint32_t AHB2RSTR;
+    volatile uint32_t AHB3RSTR;
+    uint32_t RESERVED0;
+    volatile uint32_t APB1RSTR;
+    volatile uint32_t APB2RSTR;
+    uint32_t RESERVED1[2];
+    volatile uint32_t AHB1ENR;
+    volatile uint32_t AHB2ENR;
+    volatile uint32_t AHB3ENR;
+    uint32_t RESERVED2;
+    volatile uint32_t APB1ENR;
+    volatile uint32_t APB2ENR;
+    uint32_t RESERVED3[2];
+    volatile uint32_t AHB1LPENR;
+    volatile uint32_t AHB2LPENR;
+    volatile uint32_t AHB3LPENR;
+    uint32_t RESERVED4;
+    volatile uint32_t APB1LPENR;
+    volatile uint32_t APB2LPENR;
+} RCC_Typedef;
+
+
+// GPIO
+typedef struct {
+    volatile uint32_t MODER;
+    volatile uint32_t OTYPER;
+    volatile uint32_t OSPEEDR;
+    volatile uint32_t PUPDR;
+    volatile uint32_t IDR;
+    volatile uint32_t ODR;
+    volatile uint32_t BSRR;
+    volatile uint32_t LCKR;
+    volatile uint32_t AFRL;
+    volatile uint32_t AFRH;
+} GPIO_Typedef;
+
+// USART
+typedef struct {
+    volatile uint32_t SR;
+    volatile uint32_t DR;
+    volatile uint32_t BRR;
+    volatile uint32_t CR1;
+    volatile uint32_t CR2;
+    volatile uint32_t CR3;
+    volatile uint32_t GTPR;
+} USART_Typedef;

@@ -69,7 +69,7 @@ typedef struct
 
 // Map peripheral to base address
 
-#define RCC     ((RCC_Typedef *)RCC_BASE)
+#define RCC     *((RCC_Typedef *)RCC_BASE)
 #define GPIOA   ((GPIOA_TypeDef *)GPIOA_BASE)
 
 // Delay function with precise type

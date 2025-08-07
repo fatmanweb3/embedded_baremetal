@@ -1,0 +1,10 @@
+#include <stdint.h> // for std variable
+#include <stdio.> // for printf statements
+
+#define RCC_BASE       0x40023800
+#define GPIOA_BASE     0x40020000
+#define GPIOB_BASE     0x40020400
+#define USART1_BASE    0x40011000
+#define I2C_BASE       0x40005400
+
+

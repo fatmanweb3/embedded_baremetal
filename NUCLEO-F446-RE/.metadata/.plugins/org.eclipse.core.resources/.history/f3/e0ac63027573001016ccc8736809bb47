@@ -1,0 +1,303 @@
+#include <stdint.h> // for std variable
+#include <stdio.h> // for printf statements
+
+// defining the base address
+#define RCC_BASE       0x40023800
+#define GPIOA_BASE     0x40020000
+#define GPIOB_BASE     0x40020400
+#define USART1_BASE    0x40011000
+#define USART2_BASE    0x40004400
+#define I2C1_BASE      0x40005400
+
+
+// defingint eh MPU6050 BASE Address
+#define MPU6050_ADDR              (0x68 << 1)
+#define MPU6050_WHO_AM_I           0x75
+#define MPU6050_PWR_MGMT_1_REG     0x6B
+#define MPU6050_ACCEL_XOUT_H_REG   0x3B
+
+// RCC (Reset and Clock Control)
+typedef struct {
+    volatile uint32_t CR;
+    volatile uint32_t PLLCFGR;
+    volatile uint32_t CFGR;
+    volatile uint32_t CIR;
+    volatile uint32_t AHB1RSTR;
+    volatile uint32_t AHB2RSTR;
+    volatile uint32_t AHB3RSTR;
+    uint32_t RESERVED0;
+    volatile uint32_t APB1RSTR;
+    volatile uint32_t APB2RSTR;
+    uint32_t RESERVED1[2];
+    volatile uint32_t AHB1ENR;
+    volatile uint32_t AHB2ENR;
+    volatile uint32_t AHB3ENR;
+    uint32_t RESERVED2;
+    volatile uint32_t APB1ENR;
+    volatile uint32_t APB2ENR;
+    uint32_t RESERVED3[2];
+    volatile uint32_t AHB1LPENR;
+    volatile uint32_t AHB2LPENR;
+    volatile uint32_t AHB3LPENR;
+    uint32_t RESERVED4;
+    volatile uint32_t APB1LPENR;
+    volatile uint32_t APB2LPENR;
+} RCC_Typedef;
+
+
+// GPIO
+typedef struct {
+    volatile uint32_t MODER;
+    volatile uint32_t OTYPER;
+    volatile uint32_t OSPEEDR;
+    volatile uint32_t PUPDR;
+    volatile uint32_t IDR;
+    volatile uint32_t ODR;
+    volatile uint32_t BSRR;
+    volatile uint32_t LCKR;
+    volatile uint32_t AFRL;
+    volatile uint32_t AFRH;
+} GPIO_Typedef;
+
+// USART
+typedef struct {
+    volatile uint32_t SR;
+    volatile uint32_t DR;
+    volatile uint32_t BRR;
+    volatile uint32_t CR1;
+    volatile uint32_t CR2;
+    volatile uint32_t CR3;
+    volatile uint32_t GTPR;
+} USART_Typedef;
+
+// I2C
+typedef struct {
+    volatile uint32_t CR1;
+    volatile uint32_t CR2;
+    volatile uint32_t OAR1;
+    volatile uint32_t OAR2;
+    volatile uint32_t DR;
+    volatile uint32_t SR1;
+    volatile uint32_t SR2;
+    volatile uint32_t CCR;
+    volatile uint32_t TRISE;
+    volatile uint32_t FLTR;
+} I2C_Typedef;
+
+// peripheral pointers
+#define RCC ((RCC_Typedef *) RCC_BASE)
+#define GPIOA ((GPIO_Typedef *) GPIOA_BASE)
+#define GPIOB ((GPIO_Typedef *) GPIOB_BASE)
+#define USART1 ((USART_Typedef *) USART1_BASE)
+#define USART2  ((USART_Typedef *)USART2_BASE) // New pointer
+#define I2C1   ((I2C_Typedef *) I2C1_BASE)
+
+
+//bit masks and value
+#define GPIOA_EN (1U << 0)
+#define GPIOB_EN (1U << 1)
+#define USART1_EN (1U << 4)
+#define I2C1_EN   (1U << 21)
+
+// I2C GPIO Configuration
+#define GPIOB_MODER6_AF  (2U << 12)
+#define GPIOB_MODER7_AF  (2U << 14)
+#define GPIOB_OTYPER6_OD (1U << 6)
+#define GPIOB_OTYPER7_OD (1U << 7)
+#define GPIOB_AFRL6_I2C1 (4U << 24)
+#define GPIOB_AFRL7_I2C1 (4U << 28)
+
+// UART GPIO Configuration
+#define GPIOA_MODER9_AF  (2U << 18)
+#define GPIOA_MODER10_AF (2U << 20)
+#define GPIOA_AFRH9_UART (7U << 4)
+#define GPIOA_AFRH10_UART (7U << 8)
+
+// --- Function Prototypes ---
+void delay(volatile uint32_t count);
+void uart_init(void);
+void uart_write(char *str);
+void i2c_init(void);
+void i2c_start(void);
+void i2c_stop(void);
+void i2c_write_addr(uint8_t addr);
+void i2c_write_data(uint8_t data);
+void i2c_read(uint8_t *buffer, uint8_t size);
+void mpu6050_init(void);
+void mpu6050_read_accel(int16_t *accel_data);
+
+// --- Main Function ---
+int main(void) {
+    // --- Data Variables ---
+    int16_t accel_data[3];
+    char buffer[100];
+
+    // --- System Initialization ---
+    uart_init();
+    i2c_init();
+
+    delay(500000); // Give the sensor time to power up
+    mpu6050_init();
+
+    uart_write("MPU6050 initialized successfully!\r\n");
+
+    while(1) {
+        // --- Read MPU6050 data ---
+        mpu6050_read_accel(accel_data);
+
+        // --- Format and send data via UART ---
+        sprintf(buffer, "X: %6d, Y: %6d, Z: %6d\r\n",
+                accel_data[0], accel_data[1], accel_data[2]);
+        uart_write(buffer);
+
+        delay(1000000);
+    }
+}
+
+
+// --- Function Implementations ---
+
+void delay(volatile uint32_t count) {
+    while(count--) {
+        __asm volatile("nop");
+    }
+}
+
+void uart_init(void) {
+    // 1. Enable Clocks
+    RCC->AHB1ENR |= GPIOA_EN;
+    RCC->APB2ENR |= USART1_EN;
+
+    // 2. Configure GPIOA pins for UART Alternate Function
+    GPIOA->MODER &= ~(3U << (2*9)); // Clear mode for PA9
+    GPIOA->MODER |= GPIOA_MODER9_AF; // Set mode to AF for PA9 (TX)
+    GPIOA->AFRH &= ~(0xFU << (4*(9-8))); // Clear AFRH for PA9
+    GPIOA->AFRH |= GPIOA_AFRH9_UART; // Set AFR to USART1 (AF7)
+
+    GPIOA->MODER &= ~(3U << (2*10)); // Clear mode for PA10
+    GPIOA->MODER |= GPIOA_MODER10_AF; // Set mode to AF for PA10 (RX)
+    GPIOA->AFRH &= ~(0xFU << (4*(10-8))); // Clear AFRH for PA10
+    GPIOA->AFRH |= GPIOA_AFRH10_UART; // Set AFR to USART1 (AF7)
+
+    // 3. Configure UART Peripheral (Baud Rate: 115200)
+    // For 16MHz clock (default) and 115200 baud, BRR = 16000000 / 115200 = 138.88
+    // BRR = 138 -> 0x8A. For STM32F4, BRR = 16MHz/115200 = 138.88 -> 0x8A.2D.
+    // We'll use 0x8A for the integer part and 0x2D for the fractional.
+    USART1->BRR = 0x8B; // Simple integer approximation for 115200 baud
+
+    USART1->CR1 = (1U << 13) | (1U << 3); // Enable USART and Transmit
+
+    // 4. Note: Receiving would require enabling the RXNE interrupt
+}
+
+void uart_write(char *str) {
+    while(*str) {
+        // Wait until transmit data register is empty
+        while(!(USART1->SR & (1U << 7)));
+        USART1->DR = *str++;
+    }
+}
+
+void i2c_init(void) {
+    // 1. Enable Clocks
+    RCC->AHB1ENR |= GPIOB_EN;
+    RCC->APB1ENR |= I2C1_EN;
+
+    // 2. Configure GPIO pins for I2C Alternate Function
+    GPIOB->MODER &= ~(3U << 12); GPIOB->MODER |= GPIOB_MODER6_AF; // PB6 SCL AF
+    GPIOB->OTYPER |= GPIOB_OTYPER6_OD; // Open-Drain for SCL
+    GPIOB->PUPDR |= (1U << 12); // Pull-up for SCL
+    GPIOB->AFRL |= GPIOB_AFRL6_I2C1; // AF4 for I2C1
+
+    GPIOB->MODER &= ~(3U << 14); GPIOB->MODER |= GPIOB_MODER7_AF; // PB7 SDA AF
+    GPIOB->OTYPER |= GPIOB_OTYPER7_OD; // Open-Drain for SDA
+    GPIOB->PUPDR |= (1U << 14); // Pull-up for SDA
+    GPIOB->AFRL |= GPIOB_AFRL7_I2C1; // AF4 for I2C1
+
+    // 3. Configure I2C peripheral
+    I2C1->CR1 &= ~(1U << 0); // Disable I2C before configuring
+
+    I2C1->CR2 = 16U; // Set APB1 clock frequency in MHz (16MHz)
+    I2C1->CCR = 80;  // Standard mode, 100 kHz speed (16MHz / (2 * 100kHz))
+    I2C1->TRISE = 17; // Max rise time (16MHz / 100kHz + 1)
+
+    I2C1->CR1 |= (1U << 0); // Enable I2C
+}
+
+void i2c_start(void) {
+    I2C1->CR1 |= (1U << 8); // Send START condition
+    while(!(I2C1->SR1 & (1U << 0))); // Wait for START condition to be generated (SB)
+}
+
+void i2c_stop(void) {
+    I2C1->CR1 |= (1U << 9); // Send STOP condition
+    while(!(I2C1->SR1 & (1U << 4))); // Wait for STOP condition (STOPF)
+}
+
+void i2c_write_addr(uint8_t addr) {
+    I2C1->DR = addr;
+    while(!(I2C1->SR1 & (1U << 1))); // Wait for address to be sent (ADDR)
+    (void)I2C1->SR2; // Clear ADDR flag by reading SR2
+}
+
+void i2c_write_data(uint8_t data) {
+    while(!(I2C1->SR1 & (1U << 7))); // Wait for data register empty (TxE)
+    I2C1->DR = data;
+    while(!(I2C1->SR1 & (1U << 2))); // Wait for byte transfer finished (BTF)
+}
+
+void mpu6050_init(void) {
+    // 1. Check if MPU6050 is present
+    i2c_start();
+    i2c_write_addr(MPU6050_ADDR | 0x00); // Write address (LSB=0)
+    i2c_write_data(MPU6050_PWR_MGMT_1_REG);
+    i2c_write_data(0x00); // Wake up the sensor
+    i2c_stop();
+    delay(100000);
+}
+
+void mpu6050_read_accel(int16_t *accel_data) {
+    uint8_t buffer[6];
+
+    // 1. Send the register address to start reading from
+    i2c_start();
+    i2c_write_addr(MPU6050_ADDR | 0x00); // Write address
+    i2c_write_data(MPU6050_ACCEL_XOUT_H_REG);
+    i2c_stop();
+
+    // 2. Read the 6 bytes of data
+    i2c_start();
+    i2c_write_addr(MPU6050_ADDR | 0x01); // Read address
+    i2c_read(buffer, 6); // Read 6 bytes
+    i2c_stop();
+
+    // 3. Process the data
+    accel_data[0] = (int16_t)(buffer[0] << 8 | buffer[1]); // X
+    accel_data[1] = (int16_t)(buffer[2] << 8 | buffer[3]); // Y
+    accel_data[2] = (int16_t)(buffer[4] << 8 | buffer[5]); // Z
+}
+
+// Function to read multiple bytes from I2C
+void i2c_read(uint8_t *buffer, uint8_t size) {
+    while(!(I2C1->SR1 & (1U << 1))); // Wait for ADDR to be set
+    (void)I2C1->SR2; // Clear ADDR
+
+    I2C1->CR1 |= (1U << 10); // Enable ACK
+    if (size == 1) {
+        I2C1->CR1 &= ~(1U << 10); // Disable ACK for last byte
+        while(!(I2C1->SR1 & (1U << 6))); // Wait for RxNE
+        *buffer++ = I2C1->DR;
+    } else {
+        while(size > 2) {
+            while(!(I2C1->SR1 & (1U << 6))); // Wait for RxNE
+            *buffer++ = I2C1->DR;
+            size--;
+        }
+        while(!(I2C1->SR1 & (1U << 6))); // Wait for RxNE
+        *buffer++ = I2C1->DR;
+        I2C1->CR1 &= ~(1U << 10); // Disable ACK
+        while(!(I2C1->SR1 & (1U << 6))); // Wait for RxNE
+        *buffer++ = I2C1->DR;
+    }
+}
+
