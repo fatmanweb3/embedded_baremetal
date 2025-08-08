@@ -1361,3 +1361,870 @@ arm-none-eabi-size  mpu6050_baremetal_with_driver.elf
    4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
 Finished building: default.size.stdout
  
+15:14:04 **** Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f446retx.d" -MT"Core/Startup/startup_stm32f446retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f446retx.o" "../Core/Startup/startup_stm32f446retx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Startup/startup_stm32f446retx.o: in function `Reset_Handler':
+D:/embedded_c/Bare Metal/NUCLEO-F446-RE/baremetal_driver_usart_spi_i2c/Debug/../Core/Startup/startup_stm32f446retx.s:100:(.text.Reset_Handler+0x32): undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: baremetal_driver_usart_spi_i2c.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:14:08 **** Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:72:17: error: invalid type argument of unary '*' (have 'uint32_t' {aka 'long unsigned int'})
+   72 | #define RCC     *((RCC_Typedef *)RCC_BASE)
+      |                 ^
+../Core/Src/main.c:92:5: note: in expansion of macro 'RCC'
+   92 |     RCC->AHB1ENR |= GPIOA_EN; //
+      |     ^~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:14:09 **** Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+15:14:10 **** Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+15:19:58 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:82:1: warning: declaration does not declare anything
+   82 | }I2C3_Typedef;
+      | ^
+../Core/Src/main.c:82:1: warning: no semicolon at end of struct or union
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Startup/startup_stm32f446retx.o: in function `Reset_Handler':
+D:/embedded_c/Bare Metal/NUCLEO-F446-RE/baremetal_driver_usart_spi_i2c/Debug/../Core/Startup/startup_stm32f446retx.s:100:(.text.Reset_Handler+0x32): undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: baremetal_driver_usart_spi_i2c.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:19:59 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:72:17: error: invalid type argument of unary '*' (have 'uint32_t' {aka 'long unsigned int'})
+   72 | #define RCC     *((RCC_Typedef *)RCC_BASE)
+      |                 ^
+../Core/Src/main.c:92:5: note: in expansion of macro 'RCC'
+   92 |     RCC->AHB1ENR |= GPIOA_EN; //
+      |     ^~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:19:59 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+15:20:00 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+15:20:55 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Startup/startup_stm32f446retx.o: in function `Reset_Handler':
+D:/embedded_c/Bare Metal/NUCLEO-F446-RE/baremetal_driver_usart_spi_i2c/Debug/../Core/Startup/startup_stm32f446retx.s:100:(.text.Reset_Handler+0x32): undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: baremetal_driver_usart_spi_i2c.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:20:56 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:72:17: error: invalid type argument of unary '*' (have 'uint32_t' {aka 'long unsigned int'})
+   72 | #define RCC     *((RCC_Typedef *)RCC_BASE)
+      |                 ^
+../Core/Src/main.c:92:5: note: in expansion of macro 'RCC'
+   92 |     RCC->AHB1ENR |= GPIOA_EN; //
+      |     ^~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:20:56 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+15:20:57 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+15:26:37 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Startup/startup_stm32f446retx.o: in function `Reset_Handler':
+D:/embedded_c/Bare Metal/NUCLEO-F446-RE/baremetal_driver_usart_spi_i2c/Debug/../Core/Startup/startup_stm32f446retx.s:100:(.text.Reset_Handler+0x32): undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: baremetal_driver_usart_spi_i2c.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:26:37 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:72:17: error: invalid type argument of unary '*' (have 'uint32_t' {aka 'long unsigned int'})
+   72 | #define RCC     *((RCC_Typedef *)RCC_BASE)
+      |                 ^
+../Core/Src/main.c:92:5: note: in expansion of macro 'RCC'
+   92 |     RCC->AHB1ENR |= GPIOA_EN; //
+      |     ^~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:26:38 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+15:26:38 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+15:29:52 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Startup/startup_stm32f446retx.o: in function `Reset_Handler':
+D:/embedded_c/Bare Metal/NUCLEO-F446-RE/baremetal_driver_usart_spi_i2c/Debug/../Core/Startup/startup_stm32f446retx.s:100:(.text.Reset_Handler+0x32): undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: baremetal_driver_usart_spi_i2c.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:29:52 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:72:17: error: invalid type argument of unary '*' (have 'uint32_t' {aka 'long unsigned int'})
+   72 | #define RCC     *((RCC_Typedef *)RCC_BASE)
+      |                 ^
+../Core/Src/main.c:92:5: note: in expansion of macro 'RCC'
+   92 |     RCC->AHB1ENR |= GPIOA_EN; //
+      |     ^~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:29:53 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+15:29:53 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+15:30:06 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Startup/startup_stm32f446retx.o: in function `Reset_Handler':
+D:/embedded_c/Bare Metal/NUCLEO-F446-RE/baremetal_driver_usart_spi_i2c/Debug/../Core/Startup/startup_stm32f446retx.s:100:(.text.Reset_Handler+0x32): undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: baremetal_driver_usart_spi_i2c.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:30:07 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "led_blinky_baremetal.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\led_blinky_baremetal\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="led_blinky_baremetal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: led_blinky_baremetal.elf
+ 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+arm-none-eabi-objdump -h -S led_blinky_baremetal.elf  > "led_blinky_baremetal.list"
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+Finished building: led_blinky_baremetal.list
+ 
+15:30:07 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+15:30:08 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+15:31:19 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Startup/startup_stm32f446retx.o: in function `Reset_Handler':
+D:/embedded_c/Bare Metal/NUCLEO-F446-RE/baremetal_driver_usart_spi_i2c/Debug/../Core/Startup/startup_stm32f446retx.s:100:(.text.Reset_Handler+0x32): undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: baremetal_driver_usart_spi_i2c.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:31:20 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+15:31:20 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+15:31:21 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+18:42:41 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Startup/startup_stm32f446retx.o: in function `Reset_Handler':
+D:/embedded_c/Bare Metal/NUCLEO-F446-RE/baremetal_driver_usart_spi_i2c/Debug/../Core/Startup/startup_stm32f446retx.s:100:(.text.Reset_Handler+0x32): undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: baremetal_driver_usart_spi_i2c.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:42:43 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+18:42:44 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+18:42:44 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+18:45:30 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: baremetal_driver_usart_spi_i2c.elf
+ 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+arm-none-eabi-objdump -h -S baremetal_driver_usart_spi_i2c.elf  > "baremetal_driver_usart_spi_i2c.list"
+   text	   data	    bss	    dec	    hex	filename
+   1152	      4	   1572	   2728	    aa8	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+Finished building: baremetal_driver_usart_spi_i2c.list
+ 
+18:45:31 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+18:45:32 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+18:45:32 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+18:48:11 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: baremetal_driver_usart_spi_i2c.elf
+ 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+arm-none-eabi-objdump -h -S baremetal_driver_usart_spi_i2c.elf  > "baremetal_driver_usart_spi_i2c.list"
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+Finished building: baremetal_driver_usart_spi_i2c.list
+ 
+18:48:12 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+18:48:12 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+18:48:12 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+18:48:55 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+18:51:38 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: baremetal_driver_usart_spi_i2c.elf
+ 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+arm-none-eabi-objdump -h -S baremetal_driver_usart_spi_i2c.elf  > "baremetal_driver_usart_spi_i2c.list"
+   text	   data	    bss	    dec	    hex	filename
+   1224	      4	   1572	   2800	    af0	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+Finished building: baremetal_driver_usart_spi_i2c.list
+ 
+18:51:39 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+18:51:40 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+18:51:40 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+18:51:43 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1224	      4	   1572	   2800	    af0	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+18:55:07 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: baremetal_driver_usart_spi_i2c.elf
+ 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+arm-none-eabi-objdump -h -S baremetal_driver_usart_spi_i2c.elf  > "baremetal_driver_usart_spi_i2c.list"
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+Finished building: baremetal_driver_usart_spi_i2c.list
+ 
+18:55:08 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+18:55:09 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+18:55:09 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+18:55:16 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+19:02:03 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: baremetal_driver_usart_spi_i2c.elf
+ 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+arm-none-eabi-objdump -h -S baremetal_driver_usart_spi_i2c.elf  > "baremetal_driver_usart_spi_i2c.list"
+   text	   data	    bss	    dec	    hex	filename
+   1168	      4	   1572	   2744	    ab8	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+Finished building: baremetal_driver_usart_spi_i2c.list
+ 
+19:02:04 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+19:02:04 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+19:02:05 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+19:02:19 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1168	      4	   1572	   2744	    ab8	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+19:02:20 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+19:02:20 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+19:02:21 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+19:02:30 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1168	      4	   1572	   2744	    ab8	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+19:03:52 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: baremetal_driver_usart_spi_i2c.elf
+ 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+arm-none-eabi-objdump -h -S baremetal_driver_usart_spi_i2c.elf  > "baremetal_driver_usart_spi_i2c.list"
+   text	   data	    bss	    dec	    hex	filename
+   1236	      4	   1572	   2812	    afc	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+Finished building: baremetal_driver_usart_spi_i2c.list
+ 
+19:03:53 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+19:03:54 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+19:03:54 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+19:03:59 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1236	      4	   1572	   2812	    afc	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+19:04:56 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: baremetal_driver_usart_spi_i2c.elf
+ 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+arm-none-eabi-objdump -h -S baremetal_driver_usart_spi_i2c.elf  > "baremetal_driver_usart_spi_i2c.list"
+   text	   data	    bss	    dec	    hex	filename
+   1168	      4	   1572	   2744	    ab8	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+Finished building: baremetal_driver_usart_spi_i2c.list
+ 
+19:04:57 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+19:04:58 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+19:04:58 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+19:05:04 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1168	      4	   1572	   2744	    ab8	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+19:09:37 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: baremetal_driver_usart_spi_i2c.elf
+ 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+arm-none-eabi-objdump -h -S baremetal_driver_usart_spi_i2c.elf  > "baremetal_driver_usart_spi_i2c.list"
+   text	   data	    bss	    dec	    hex	filename
+   1232	      4	   1572	   2808	    af8	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+Finished building: baremetal_driver_usart_spi_i2c.list
+ 
+19:09:38 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+19:09:38 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+19:09:38 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+19:09:46 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1232	      4	   1572	   2808	    af8	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+19:10:58 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: baremetal_driver_usart_spi_i2c.elf
+ 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+arm-none-eabi-objdump -h -S baremetal_driver_usart_spi_i2c.elf  > "baremetal_driver_usart_spi_i2c.list"
+   text	   data	    bss	    dec	    hex	filename
+   1232	      4	   1572	   2808	    af8	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+Finished building: baremetal_driver_usart_spi_i2c.list
+ 
+19:10:59 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+19:10:59 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+19:11:00 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+19:11:41 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1232	      4	   1572	   2808	    af8	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+19:11:41 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+19:11:42 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+19:11:42 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+19:11:45 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1232	      4	   1572	   2808	    af8	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+19:12:31 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: baremetal_driver_usart_spi_i2c.elf
+ 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+arm-none-eabi-objdump -h -S baremetal_driver_usart_spi_i2c.elf  > "baremetal_driver_usart_spi_i2c.list"
+   text	   data	    bss	    dec	    hex	filename
+   1232	      4	   1572	   2808	    af8	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+Finished building: baremetal_driver_usart_spi_i2c.list
+ 
+19:12:32 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+19:12:32 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+19:12:33 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+19:13:00 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1232	      4	   1572	   2808	    af8	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+20:35:36 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: baremetal_driver_usart_spi_i2c.elf
+ 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+arm-none-eabi-objdump -h -S baremetal_driver_usart_spi_i2c.elf  > "baremetal_driver_usart_spi_i2c.list"
+   text	   data	    bss	    dec	    hex	filename
+   1252	      4	   1572	   2828	    b0c	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+Finished building: baremetal_driver_usart_spi_i2c.list
+ 
+20:35:37 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+20:35:38 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+20:35:38 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+20:35:47 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "baremetal_driver_usart_spi_i2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_driver_usart_spi_i2c\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="baremetal_driver_usart_spi_i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: baremetal_driver_usart_spi_i2c.elf
+ 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+arm-none-eabi-objdump -h -S baremetal_driver_usart_spi_i2c.elf  > "baremetal_driver_usart_spi_i2c.list"
+   text	   data	    bss	    dec	    hex	filename
+   1252	      4	   1572	   2828	    b0c	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+Finished building: baremetal_driver_usart_spi_i2c.list
+ 
+20:35:48 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+20:35:48 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+20:35:48 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+20:35:52 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1252	      4	   1572	   2828	    b0c	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+22:33:31 **** Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1252	      4	   1572	   2828	    b0c	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+22:33:32 **** Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+22:33:32 **** Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+22:33:33 **** Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
