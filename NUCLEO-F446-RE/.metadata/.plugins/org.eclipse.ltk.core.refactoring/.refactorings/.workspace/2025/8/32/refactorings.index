@@ -1,3 +1,4 @@
 1754383756834	Delete resource 'led_blinky_bare_metal'
 1754405722056	Delete resource 'led_blinky_baremetal'
 1754643810403	Delete resource 'baremetal_driver_usart_spi_i2c/Core/Inc/rcc.h'
+1754744489639	Delete resource 'stm32f446re_drivers_gpio_spi_uart_can_i2c'

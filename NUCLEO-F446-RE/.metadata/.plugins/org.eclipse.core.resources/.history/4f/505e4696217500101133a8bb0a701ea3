@@ -1,0 +1,20 @@
+/*
+ * GPIO_driver.h
+ *
+ *  Created on: Aug 9, 2025
+ *      Author: sudharsan
+ */
+
+#ifndef INC_GPIO_DRIVER_H_
+#define INC_GPIO_DRIVER_H_
+
+
+#define GPIOA_BASE
+#define GPIOB_BASE
+#define GPIOC_BASE
+#define GPIOD_BASE
+#define GPIOE_BASE
+#define GPIOF_BASE
+#define GPIOG_BASE
+#define GPIOH_BASE
+#endif /* INC_GPIO_DRIVER_H_ */

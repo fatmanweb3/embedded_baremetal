@@ -1,0 +1,113 @@
+
+
+#include "usart2.h"
+#include <stdint.h> // for std uint variables
+
+
+#define I2C3_BASE      0x40005C00
+#define SPI1_BASE      0x40013000
+
+
+typedef struct
+{
+	volatile uint32_t CR1;
+	volatile uint32_t CR2;
+	volatile uint32_t OAR1;
+	volatile uint32_t OAR2;
+	volatile uint32_t DR;
+	volatile uint32_t SR1;
+	volatile uint32_t SR2;
+	volatile uint32_t CCR;
+	volatile uint32_t TRISE;
+	volatile uint32_t FLTR;
+}I2C_Typedef; //i2c register map
+
+typedef struct
+{
+	volatile uint32_t CR1;
+	volatile uint32_t CR2;
+	volatile uint32_t SR;
+	volatile uint32_t DR;
+	volatile uint32_t CRCPR;
+	volatile uint32_t RXCRCR;
+	volatile uint32_t TXCRCR;
+	volatile uint32_t I2SCFGR;
+	volatile uint32_t I2SPR;
+}SPI_Typedef; // spi  register map
+
+
+#define I2C3   ((I2C_Typedef *) I2C3_BASE)
+#define SPI1   ((SPI_Typedef *) SPI1_BASE)
+
+
+
+// Baud rate calculation for 115200 bps with PCLK1 = 45 MHz
+// USARTDIV = f_PCLK1 / (16 * BaudRate) = 45,000,000 / (16 * 115200) = 24.414
+// DIV_MANTISSA = 24 (0x18)
+// DIV_FRACTION = 16 * (0.414) = 6.624 -> round(7) (0x7)
+// BRR = (24 << 4) | 7 = 0x187
+
+#define USART_BAUD_RATE_115200 (0x08BU)
+
+void usart2_init(void)
+{
+	// 1. Enable the clock for GPIOA
+	// Set the first bit (GPIOAEN) of the AHB1ENR register to 1
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOA;
+	RCC->APB1ENR |= RCC_APB1ENR_USART2;
+
+	GPIOA->MODER &= ~(0b0011 << GPIOA_MODER_PA2_POS);
+	GPIOA->MODER &= ~(3U << GPIOA_MODER_PA3_POS);
+
+	GPIOA->MODER |= (0b0010 << GPIOA_MODER_PA2_POS);
+	GPIOA->MODER |= (GPIOA_MODER_AF_MODE << GPIOA_MODER_PA3_POS);
+
+	GPIOA->AFRL &= ~(0b1111 << GPIOA_AFRL_PA2_POS);
+	GPIOA->AFRL &= ~(15U << GPIOA_AFRL_PA3_POS);
+
+	GPIOA->AFRL |= (0b0111 << GPIOA_AFRL_PA2_POS);
+	GPIOA->AFRL |= (GPIOA_AF_USART2 << GPIOA_AFRL_PA3_POS);
+
+	USART2->BRR = USART_BAUD_RATE_115200;
+
+	//configuring the control register
+	USART2->CR1 = (1U <<13) | (1U << 3) | (1U << 2) | USART_CR1_RXNEIE;
+}
+
+void usart2_transmitchar(uint8_t data)
+{
+	while(!(USART2->SR & (1U << 7)));
+
+	USART2->DR = data;
+	while (!(USART2->SR & (1U << 6))); // Wait for TC
+}
+
+void delay(uint32_t milliseconds)
+{
+    // Adjust this value based on your MCU's clock frequency
+    volatile uint32_t i;
+    for (; milliseconds > 0; milliseconds--)
+    {
+        for (i = 0; i < 8000; i++);
+    }
+}
+
+
+int main(void)
+{
+	// Configure PLL for 45 MHz APB1 if needed (consult reference manual)
+	usart2_init();
+	const char *message = "Hello World\r\n";
+
+	while(1)
+	{
+		while(*message)
+		{
+			usart2_transmitchar(*message);
+			message++;
+		}
+		// Reset the message pointer to the beginning of the string
+		delay(1000);
+		message = "Hello World\r\n\n";
+	}
+}

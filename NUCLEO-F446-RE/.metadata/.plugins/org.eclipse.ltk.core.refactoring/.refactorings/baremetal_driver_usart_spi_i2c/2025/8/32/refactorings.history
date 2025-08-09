@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;baremetal_driver_usart_spi_i2c/Core/Inc/usar2t.h&apos; to &apos;usart2.h&apos;" description="Rename resource &apos;usar2t.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/usar2t.h" name="usart2.h" stamp="1754673499623" updateReferences="true"/>
+</session>

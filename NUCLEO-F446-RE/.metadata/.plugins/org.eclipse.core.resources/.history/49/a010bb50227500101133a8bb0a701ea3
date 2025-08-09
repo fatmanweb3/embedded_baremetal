@@ -1,0 +1,29 @@
+/*
+ * GPIO_driver.h
+ *
+ *  Created on: Aug 9, 2025
+ *      Author: sudharsan
+ */
+
+#ifndef INC_GPIO_DRIVER_H_
+#define INC_GPIO_DRIVER_H_
+
+#include <stdint.h>
+
+
+#define GPIOA_BASE_ADDR 0X40020000U
+#define GPIOB_BASE_ADDR 0X40020400U
+#define GPIOC_BASE_ADDR 0X40020800U
+#define GPIOD_BASE_ADDR 0X40020C00U
+#define GPIOE_BASE_ADDR 0X40021000U
+#define GPIOF_BASE_ADDR 0X40021400U
+#define GPIOG_BASE_ADDR 0X40021800U
+#define GPIOH_BASE_ADDR 0X40021C00U
+
+typedef struct
+{
+	volatile
+};
+
+
+#endif /* INC_GPIO_DRIVER_H_ */

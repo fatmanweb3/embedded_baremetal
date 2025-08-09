@@ -1,0 +1,9 @@
+/*
+ * GPIO_driver.c
+ *
+ *  Created on: Aug 9, 2025
+ *      Author: sudharsan
+ */
+
+#include "GPIO_driver.h"
+

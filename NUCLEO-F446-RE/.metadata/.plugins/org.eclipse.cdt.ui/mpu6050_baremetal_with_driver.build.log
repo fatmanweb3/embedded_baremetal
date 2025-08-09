@@ -1,4 +1,4 @@
-22:33:33 **** Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+03:12:31 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
 make -j4 all 
 arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  mpu6050_baremetal_with_driver.elf
 Finished building: default.size.stdout
  
 
-22:33:33 Build Finished. 0 errors, 0 warnings. (took 332ms)
+03:12:32 Build Finished. 0 errors, 0 warnings. (took 530ms)
 

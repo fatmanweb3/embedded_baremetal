@@ -1,0 +1,87 @@
+/*
+ * GPIO_driver.h
+ *
+ *  Created on: Aug 9, 2025
+ *      Author: sudharsan
+ */
+
+#ifndef INC_GPIO_DRIVER_H_
+#define INC_GPIO_DRIVER_H_
+
+#include <stdint.h>
+
+
+#define GPIOA_BASE_ADDR 0X40020000U
+#define GPIOB_BASE_ADDR 0X40020400U
+#define GPIOC_BASE_ADDR 0X40020800U
+#define GPIOD_BASE_ADDR 0X40020C00U
+#define GPIOE_BASE_ADDR 0X40021000U
+#define GPIOF_BASE_ADDR 0X40021400U
+#define GPIOG_BASE_ADDR 0X40021800U
+#define GPIOH_BASE_ADDR 0X40021C00U
+
+typedef enum
+{
+	GPIOA,
+	GPIOB,
+	GPIOC,
+	GPIOD,
+	GPIOE,
+	GPIOF,
+	GPIOG,
+	GPIOH
+}GPIO_Port;
+
+typedef enum
+{
+	PIN_0,
+	PIN_1,
+	PIN_2,
+	PIN_3,
+	PIN_4,
+	PIN_5,
+	PIN_6,
+	PIN_7,
+	PIN_8,
+	PIN_9,
+	PIN_10,
+	PIN_11,
+	PIN_12,
+	PIN_13,
+	PIN_14,
+	PIN_15
+}GPIO_PinNumber;
+
+typedef enum
+{
+	GPIO_MODE_INPUT,
+	GPIO_MODE_OUTPUT,
+	GPIO_MODE_AF,
+	GPIO_MDOE_ANALOG
+}GPIO_Mode;
+
+typedef enum
+{
+	GPIO_OTYPER_PUSHPULL,
+	GPIO_OTYPER_OPENDRAIN
+}GPIO_OutputType;
+
+
+typedef struct
+{
+	volatile uint32_t MODER;
+	volatile uint32_t OTYPER;
+	volatile uint32_t OSPEEDER;
+	volatile uint32_t PUPDR;
+	volatile uint32_t IDR;
+	volatile uint32_t ODR;
+	volatile uint32_t BSRR;
+	volatile uint32_t LCKR;
+	volatile uint32_t AFR[2];
+
+}GPIO_Typedef;
+
+
+
+
+#endif /* INC_GPIO_DRIVER_H_ */

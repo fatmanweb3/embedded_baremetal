@@ -1,0 +1,107 @@
+/*
+ * usar2t.h
+ *
+ *  Created on: Aug 8, 2025
+ *      Author: sudharsan
+ */
+
+#ifndef INC_USART2_H_
+#define INC_USART2_H_
+
+#include <stdint.h> // for std uint variables
+
+
+#define GPIOA_BASE     0x40020000
+#define RCC_BASE       0x40023800 // rcc abase address
+
+#define USART2_BASE    0x40004400
+
+
+typedef struct
+{
+	volatile uint32_t CR;
+	volatile uint32_t PLLCFGR;
+	volatile uint32_t CFGR;
+	volatile uint32_t CIR;
+	volatile uint32_t AHB1RSTR;
+	volatile uint32_t AHB2RSTR;
+	volatile uint32_t AHB3RSTR;
+	uint32_t RESERVED0;
+	volatile uint32_t APB1RSTR;
+	volatile uint32_t APB2RSTR;
+	uint32_t RESERVED1[2];
+	volatile uint32_t AHB1ENR;
+	volatile uint32_t AHB2ENR;
+	volatile uint32_t AHB3ENR;
+	uint32_t RESERVED2;
+	volatile uint32_t APB1ENR;
+	volatile uint32_t APB2ENR;
+	uint32_t RESERVED3[2];
+	volatile uint32_t AHB1LPENR;
+	volatile uint32_t AHB2LPENR;
+	volatile uint32_t AHB3LPENR;
+	uint32_t RESERVED4;
+	volatile uint32_t APB1LPENR;
+	volatile uint32_t APB2LPENR;
+	uint32_t RESERVED5[2];
+	volatile uint32_t BDCR;
+	volatile uint32_t CSR;
+	uint32_t RESERVED6[2];
+	volatile uint32_t SSCGR;
+	volatile uint32_t PLLI2SCFGR;
+	volatile uint32_t PLLSAICFGR;
+	volatile uint32_t DCKCFGR;
+	volatile uint32_t CKGATENR;
+	volatile uint32_t DCKCFGR2;
+}RCC_Typedef;  // this is for rcc register maps.
+
+typedef struct
+{
+	volatile uint32_t MODER;
+	volatile uint32_t OTYPER;
+	volatile uint32_t OSPEEDR;
+	volatile uint32_t PUPDR;
+	volatile uint32_t IDR;
+	volatile uint32_t ODR;
+	volatile uint32_t BSRR;
+	volatile uint32_t LCKR;
+	volatile uint32_t AFRL;
+	volatile uint32_t AFRH;
+}GPIO_Typedef; //gpio register map
+
+typedef struct
+{
+	volatile uint32_t SR;
+	volatile uint32_t DR;
+	volatile uint32_t BRR;
+	volatile uint32_t CR1;
+	volatile uint32_t CR2;
+	volatile uint32_t CR3;
+	volatile uint32_t GTPR;
+}USART_Typedef; //usart register map
+
+#define RCC    ((RCC_Typedef *) RCC_BASE)
+#define GPIOA  ((GPIO_Typedef *) GPIOA_BASE)
+#define USART2 ((USART_Typedef *) USART2_BASE)
+
+#define RCC_AHB1ENR_GPIOA   (1U << 0)
+#define RCC_APB1ENR_USART2  (1U << 17)
+#define RCC_APB1ENR_I2C3    (1U << 23)
+#define RCC_APB2ENR_SPI1    (1U << 9)
+
+#define GPIOA_MODER_AF_MODE (0B10) // 0b00 is for input mode, 0b01 is for output mode, 0b10 is for afre mode , 0b11 is for anal;og mode.
+#define GPIOA_MODER_PA2_POS (2 * 2) // the first number 2 is the pin number that is port a pin 2 , next is the bit field size for the oder it is 2 so pin number * 2
+#define GPIOA_MODER_PA3_POS (3 * 2) // like wise here it is the pin 3 * bit field 2
+
+#define GPIOA_AF_USART2     (0b0111) // it can be written 7u also
+#define GPIOA_AFRL_PA2_POS  (2 * 4) // number 2 is the pin number , number 4 is the bit field
+#define GPIOA_AFRL_PA3_POS  (3 * 4) // same her as previous one also.
+
+void usart2_init(void);
+void usart2_transmitchar(unint8_t data);
+void usart2_receivechar(void);
+void usart2_transmit_string(const char *str);
+void usart2_receive_string(char *buffer, uint32_t max_length);
+void usart2_
+
+#endif /* INC_USART2_H_ */

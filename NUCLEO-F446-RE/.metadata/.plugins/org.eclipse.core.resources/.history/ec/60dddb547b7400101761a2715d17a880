@@ -1,0 +1,22 @@
+/*
+ * usar2t.h
+ *
+ *  Created on: Aug 8, 2025
+ *      Author: sudharsan
+ */
+
+#ifndef INC_USAR2T_H_
+#define INC_USAR2T_H_
+
+#include <stdint.h> // for std uint variables
+
+
+
+#define GPIOA_BASE     0x40020000
+#define RCC_BASE       0x40023800 // rcc abase address
+
+#define USART2_BASE    0x40004400
+
+
+
+#endif /* INC_USAR2T_H_ */
