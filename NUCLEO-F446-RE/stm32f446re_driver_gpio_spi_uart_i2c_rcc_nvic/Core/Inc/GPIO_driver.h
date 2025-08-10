@@ -79,7 +79,19 @@ typedef enum
 	GPIO_PUPD_PULLDOWN
 }GPIO_PullUpDown;
 
-
+// structure for gpio registers.
+typedef struct
+{
+	volatile uint32_t MODER;
+	volatile uint32_t OTYPER;
+	volatile uint32_t OSPEEDR;
+	volatile uint32_t PUPDR;
+	volatile uint32_t IDR;
+	volatile uint32_t ODR;
+	volatile uint32_t BSRR;
+	volatile uint32_t LCKR;
+	volatile uint32_t AFR[2];// definied the afrl and afrh as afr[2]
+}GPIO_TypeDef;
 
 //definitons for base gpio address
 #define GPIOA_BASE_ADDR 0X40020000UL
@@ -101,19 +113,7 @@ typedef enum
 #define GPIOG 	((GPIO_Typedef *) GPIOG_BASE_ADDR)
 #define GPIOH 	((GPIO_Typedef *) GPIOH_BASE_ADDR)
 
-// structure for gpio registers.
-typedef struct
-{
-	volatile uint32_t MODER;
-	volatile uint32_t OTYPER;
-	volatile uint32_t OSPEEDR;
-	volatile uint32_t PUPDR;
-	volatile uint32_t IDR;
-	volatile uint32_t ODR;
-	volatile uint32_t BSRR;
-	volatile uint32_t LCKR;
-	volatile uint32_t AFR[2];// definied the afrl and afrh as afr[2]
-}GPIO_TypeDef;
+
 
 //creating a structure for pin configuration
 typedef struct
