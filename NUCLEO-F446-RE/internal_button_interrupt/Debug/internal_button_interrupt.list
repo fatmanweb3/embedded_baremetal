@@ -186,7 +186,7 @@ void init_gpio(void)
  8000294:	4a09      	ldr	r2, [pc, #36]	@ (80002bc <init_gpio+0x6c>)
  8000296:	f023 6340 	bic.w	r3, r3, #201326592	@ 0xc000000
  800029a:	60d3      	str	r3, [r2, #12]
-    BUTTON_PORT->PUPDR |= GPIO_PUPDR_PUPD13_0; // this is basically (1U << 26U)
+    BUTTON_PORT->PUPDR |= GPIO_PUPDR_PUPD13_0; // this is basically (1U << 26U) this is pull up _1 means pull down
  800029c:	4b07      	ldr	r3, [pc, #28]	@ (80002bc <init_gpio+0x6c>)
  800029e:	68db      	ldr	r3, [r3, #12]
  80002a0:	4a06      	ldr	r2, [pc, #24]	@ (80002bc <init_gpio+0x6c>)
@@ -212,12 +212,12 @@ void init_button_exti(void)
  80002c0:	b580      	push	{r7, lr}
  80002c2:	af00      	add	r7, sp, #0
     // enabling the clock for ssyconfig becuase it is connected in apb2 buss
-    RCC->APB1ENR |= RCC_APB2ENR_SYSCFGEN;
+    RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;
  80002c4:	4b11      	ldr	r3, [pc, #68]	@ (800030c <init_button_exti+0x4c>)
- 80002c6:	6c1b      	ldr	r3, [r3, #64]	@ 0x40
+ 80002c6:	6c5b      	ldr	r3, [r3, #68]	@ 0x44
  80002c8:	4a10      	ldr	r2, [pc, #64]	@ (800030c <init_button_exti+0x4c>)
  80002ca:	f443 4380 	orr.w	r3, r3, #16384	@ 0x4000
- 80002ce:	6413      	str	r3, [r2, #64]	@ 0x40
+ 80002ce:	6453      	str	r3, [r2, #68]	@ 0x44
 
     //SYSCFG CONTROLS THE EXTI 
     // NOW I HAVE CHOOSE THE13 PIN FOR THE INTERUTP TRIGGERING 
@@ -283,11 +283,11 @@ void EXTI15_10_IRQHandler(void)
  8000324:	2b00      	cmp	r3, #0
  8000326:	d00b      	beq.n	8000340 <EXTI15_10_IRQHandler+0x28>
     {
-        LED_PORT->ODR ^= GPIO_ODR_OD5_Pos;
+        GPIOC->ODR ^= GPIO_ODR_OD5; //THIS IS BASICALLY ( 1U << 5U )
  8000328:	4b09      	ldr	r3, [pc, #36]	@ (8000350 <EXTI15_10_IRQHandler+0x38>)
  800032a:	695b      	ldr	r3, [r3, #20]
  800032c:	4a08      	ldr	r2, [pc, #32]	@ (8000350 <EXTI15_10_IRQHandler+0x38>)
- 800032e:	f083 0305 	eor.w	r3, r3, #5
+ 800032e:	f083 0320 	eor.w	r3, r3, #32
  8000332:	6153      	str	r3, [r2, #20]
 
         // Clear the interrupt pending flag by writing a '1' to it
@@ -299,13 +299,14 @@ void EXTI15_10_IRQHandler(void)
  800033a:	f443 5300 	orr.w	r3, r3, #8192	@ 0x2000
  800033e:	6153      	str	r3, [r2, #20]
     }
+}
  8000340:	bf00      	nop
  8000342:	46bd      	mov	sp, r7
  8000344:	f85d 7b04 	ldr.w	r7, [sp], #4
  8000348:	4770      	bx	lr
  800034a:	bf00      	nop
  800034c:	40013c00 	.word	0x40013c00
- 8000350:	40020000 	.word	0x40020000
+ 8000350:	40020800 	.word	0x40020800
 
 08000354 <NMI_Handler>:
 /******************************************************************************/

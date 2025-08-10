@@ -121,7 +121,7 @@ void init_gpio(void)
     BUTTON_PORT->MODER &= ~(GPIO_MODER_MODER13_Msk);// CLEARING THE 13 PIN SO I CAN SET THE PIN TO DEFAULT INPUT MODE
 
     BUTTON_PORT->PUPDR &= ~(GPIO_PUPDR_PUPD13_Msk); // CLEARING THE PULL UP DOWN CONFIGURATION SO I CAN CLEAR THE SETTING
-    BUTTON_PORT->PUPDR |= GPIO_PUPDR_PUPD13_0; // this is basically (1U << 26U)
+    BUTTON_PORT->PUPDR |= GPIO_PUPDR_PUPD13_0; // this is basically (1U << 26U) this is pull up _1 means pull down
 
 }
 
@@ -130,7 +130,7 @@ void init_gpio(void)
 void init_button_exti(void)
 {
     // enabling the clock for ssyconfig becuase it is connected in apb2 buss
-    RCC->APB1ENR |= RCC_APB2ENR_SYSCFGEN;
+    RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;
 
     //SYSCFG CONTROLS THE EXTI 
     // NOW I HAVE CHOOSE THE13 PIN FOR THE INTERUTP TRIGGERING 
@@ -159,10 +159,12 @@ void EXTI15_10_IRQHandler(void)
 {
     if(EXTI->PR & EXTI_PR_PR13)
     {
-        LED_PORT->ODR ^= GPIO_ODR_OD5_Pos;
+        GPIOC->ODR ^= GPIO_ODR_OD5; //THIS IS BASICALLY ( 1U << 5U )
 
         // Clear the interrupt pending flag by writing a '1' to it
 
         EXTI->PR |= EXTI_PR_PR13;
     }
 }
+
+
