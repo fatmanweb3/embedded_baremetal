@@ -3335,3 +3335,835 @@ arm-none-eabi-size  mpu6050_baremetal_with_driver.elf
    4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
 Finished building: default.size.stdout
  
+00:36:37 **** Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1452	      4	   1580	   3036	    bdc	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+00:36:37 **** Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f446retx.d" -MT"Core/Startup/startup_stm32f446retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f446retx.o" "../Core/Startup/startup_stm32f446retx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/main.c: In function 'init_timer':
+../Core/Src/main.c:32:21: error: 'RCC_AHB1ENR_TIM2' undeclared (first use in this function); did you mean 'RCC_APB1ENR_TIM2EN'?
+   32 |     RCC->AHB1ENR |= RCC_AHB1ENR_TIM2;
+      |                     ^~~~~~~~~~~~~~~~
+      |                     RCC_APB1ENR_TIM2EN
+../Core/Src/main.c:32:21: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+00:36:40 **** Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+00:36:41 **** Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+00:36:41 **** Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+00:36:42 **** Build of configuration Debug for project stm32f446re_driver_gpio_spi_uart_i2c_rcc_nvic ****
+make -j4 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f446retx.d" -MT"Core/Startup/startup_stm32f446retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f446retx.o" "../Core/Startup/startup_stm32f446retx.s"
+arm-none-eabi-gcc "../Core/Src/GPIO_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/GPIO_driver.d" -MT"Core/Src/GPIO_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/GPIO_driver.o"
+In file included from ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:156,
+                 from ../Core/Src/GPIO_driver.c:9:
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:469:3: error: conflicting types for 'GPIO_TypeDef'; have 'struct <anonymous>'
+  469 | } GPIO_TypeDef;
+      |   ^~~~~~~~~~~~
+In file included from ../Core/Src/GPIO_driver.c:8:
+../Core/Inc/GPIO_driver.h:94:2: note: previous declaration of 'GPIO_TypeDef' with type 'GPIO_TypeDef'
+   94 | }GPIO_TypeDef;
+      |  ^~~~~~~~~~~~
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1121: warning: "GPIOA" redefined
+ 1121 | #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:107: note: this is the location of the previous definition
+  107 | #define GPIOA   ((GPIO_Typedef *) GPIOA_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1122: warning: "GPIOB" redefined
+ 1122 | #define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:108: note: this is the location of the previous definition
+  108 | #define GPIOB   ((GPIO_Typedef *) GPIOB_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1123: warning: "GPIOC" redefined
+ 1123 | #define GPIOC               ((GPIO_TypeDef *) GPIOC_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:109: note: this is the location of the previous definition
+  109 | #define GPIOC   ((GPIO_Typedef *) GPIOC_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1124: warning: "GPIOD" redefined
+ 1124 | #define GPIOD               ((GPIO_TypeDef *) GPIOD_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:110: note: this is the location of the previous definition
+  110 | #define GPIOD   ((GPIO_Typedef *) GPIOD_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1125: warning: "GPIOE" redefined
+ 1125 | #define GPIOE               ((GPIO_TypeDef *) GPIOE_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:111: note: this is the location of the previous definition
+  111 | #define GPIOE   ((GPIO_Typedef *) GPIOE_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1126: warning: "GPIOF" redefined
+ 1126 | #define GPIOF               ((GPIO_TypeDef *) GPIOF_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:112: note: this is the location of the previous definition
+  112 | #define GPIOF   ((GPIO_Typedef *) GPIOF_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1127: warning: "GPIOG" redefined
+ 1127 | #define GPIOG               ((GPIO_TypeDef *) GPIOG_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:113: note: this is the location of the previous definition
+  113 | #define GPIOG   ((GPIO_Typedef *) GPIOG_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1128: warning: "GPIOH" redefined
+ 1128 | #define GPIOH               ((GPIO_TypeDef *) GPIOH_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:114: note: this is the location of the previous definition
+  114 | #define GPIOH   ((GPIO_Typedef *) GPIOH_BASE_ADDR)
+      | 
+../Core/Src/GPIO_driver.c: In function 'GPIO_Init':
+../Core/Src/GPIO_driver.c:21:9: error: pointers are not permitted as case values
+   21 |         case GPIOA:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:24:9: error: pointers are not permitted as case values
+   24 |         case GPIOB:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:27:9: error: pointers are not permitted as case values
+   27 |         case GPIOC:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:30:9: error: pointers are not permitted as case values
+   30 |         case GPIOD:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:33:9: error: pointers are not permitted as case values
+   33 |         case GPIOE:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:36:9: error: pointers are not permitted as case values
+   36 |         case GPIOF:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:39:9: error: pointers are not permitted as case values
+   39 |         case GPIOG:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:42:9: error: pointers are not permitted as case values
+   42 |         case GPIOH:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:50:9: error: pointers are not permitted as case values
+   50 |         case GPIOA: gpio_port = GPIOA; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:51:9: error: pointers are not permitted as case values
+   51 |         case GPIOB: gpio_port = GPIOB; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:52:9: error: pointers are not permitted as case values
+   52 |         case GPIOC: gpio_port = GPIOC; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:53:9: error: pointers are not permitted as case values
+   53 |         case GPIOD: gpio_port = GPIOD; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:54:9: error: pointers are not permitted as case values
+   54 |         case GPIOE: gpio_port = GPIOE; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:55:9: error: pointers are not permitted as case values
+   55 |         case GPIOF: gpio_port = GPIOF; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:56:9: error: pointers are not permitted as case values
+   56 |         case GPIOG: gpio_port = GPIOG; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:57:9: error: pointers are not permitted as case values
+   57 |         case GPIOH: gpio_port = GPIOH; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:61:28: error: expected expression before '<<' token
+   61 |     gpio_port->MODER &= ~( << )
+      |                            ^~
+../Core/Src/GPIO_driver.c:61:32: error: expected ';' before '}' token
+   61 |     gpio_port->MODER &= ~( << )
+      |                                ^
+      |                                ;
+   62 | }
+      | ~                               
+../Core/Src/GPIO_driver.c: At top level:
+../Core/Src/GPIO_driver.c:71:6: error: conflicting types for 'GPIO_ReadPin'; have 'void(GPIO_Port,  GPIO_PinNumber)'
+   71 | void GPIO_ReadPin(GPIO_Port port, GPIO_PinNumber pin);
+      |      ^~~~~~~~~~~~
+../Core/Inc/GPIO_driver.h:143:9: note: previous declaration of 'GPIO_ReadPin' with type 'uint8_t(GPIO_Port,  GPIO_PinNumber)' {aka 'unsigned char(GPIO_Port,  GPIO_PinNumber)'}
+  143 | uint8_t GPIO_ReadPin(GPIO_Port port, GPIO_PinNumber pin);
+      |         ^~~~~~~~~~~~
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+make: *** [Core/Src/subdir.mk:37: Core/Src/GPIO_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+00:53:56 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1452	      4	   1580	   3036	    bdc	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+00:53:57 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+arm-none-eabi-gcc -o "internal_button_interrupt.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\internal_button_interrupt\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="internal_button_interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: internal_button_interrupt.elf
+ 
+arm-none-eabi-size  internal_button_interrupt.elf 
+arm-none-eabi-objdump -h -S internal_button_interrupt.elf  > "internal_button_interrupt.list"
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+Finished building: internal_button_interrupt.list
+ 
+00:53:59 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+00:54:00 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+00:54:00 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+00:54:01 **** Incremental Build of configuration Debug for project stm32f446re_driver_gpio_spi_uart_i2c_rcc_nvic ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/GPIO_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/GPIO_driver.d" -MT"Core/Src/GPIO_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/GPIO_driver.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+In file included from ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:156,
+                 from ../Core/Src/GPIO_driver.c:9:
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:469:3: error: conflicting types for 'GPIO_TypeDef'; have 'struct <anonymous>'
+  469 | } GPIO_TypeDef;
+      |   ^~~~~~~~~~~~
+In file included from ../Core/Src/GPIO_driver.c:8:
+../Core/Inc/GPIO_driver.h:94:2: note: previous declaration of 'GPIO_TypeDef' with type 'GPIO_TypeDef'
+   94 | }GPIO_TypeDef;
+      |  ^~~~~~~~~~~~
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1121: warning: "GPIOA" redefined
+ 1121 | #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:107: note: this is the location of the previous definition
+  107 | #define GPIOA   ((GPIO_Typedef *) GPIOA_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1122: warning: "GPIOB" redefined
+ 1122 | #define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:108: note: this is the location of the previous definition
+  108 | #define GPIOB   ((GPIO_Typedef *) GPIOB_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1123: warning: "GPIOC" redefined
+ 1123 | #define GPIOC               ((GPIO_TypeDef *) GPIOC_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:109: note: this is the location of the previous definition
+  109 | #define GPIOC   ((GPIO_Typedef *) GPIOC_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1124: warning: "GPIOD" redefined
+ 1124 | #define GPIOD               ((GPIO_TypeDef *) GPIOD_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:110: note: this is the location of the previous definition
+  110 | #define GPIOD   ((GPIO_Typedef *) GPIOD_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1125: warning: "GPIOE" redefined
+ 1125 | #define GPIOE               ((GPIO_TypeDef *) GPIOE_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:111: note: this is the location of the previous definition
+  111 | #define GPIOE   ((GPIO_Typedef *) GPIOE_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1126: warning: "GPIOF" redefined
+ 1126 | #define GPIOF               ((GPIO_TypeDef *) GPIOF_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:112: note: this is the location of the previous definition
+  112 | #define GPIOF   ((GPIO_Typedef *) GPIOF_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1127: warning: "GPIOG" redefined
+ 1127 | #define GPIOG               ((GPIO_TypeDef *) GPIOG_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:113: note: this is the location of the previous definition
+  113 | #define GPIOG   ((GPIO_Typedef *) GPIOG_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1128: warning: "GPIOH" redefined
+ 1128 | #define GPIOH               ((GPIO_TypeDef *) GPIOH_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:114: note: this is the location of the previous definition
+  114 | #define GPIOH   ((GPIO_Typedef *) GPIOH_BASE_ADDR)
+      | 
+../Core/Src/GPIO_driver.c: In function 'GPIO_Init':
+../Core/Src/GPIO_driver.c:21:9: error: pointers are not permitted as case values
+   21 |         case GPIOA:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:24:9: error: pointers are not permitted as case values
+   24 |         case GPIOB:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:27:9: error: pointers are not permitted as case values
+   27 |         case GPIOC:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:30:9: error: pointers are not permitted as case values
+   30 |         case GPIOD:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:33:9: error: pointers are not permitted as case values
+   33 |         case GPIOE:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:36:9: error: pointers are not permitted as case values
+   36 |         case GPIOF:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:39:9: error: pointers are not permitted as case values
+   39 |         case GPIOG:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:42:9: error: pointers are not permitted as case values
+   42 |         case GPIOH:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:50:9: error: pointers are not permitted as case values
+   50 |         case GPIOA: gpio_port = GPIOA; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:51:9: error: pointers are not permitted as case values
+   51 |         case GPIOB: gpio_port = GPIOB; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:52:9: error: pointers are not permitted as case values
+   52 |         case GPIOC: gpio_port = GPIOC; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:53:9: error: pointers are not permitted as case values
+   53 |         case GPIOD: gpio_port = GPIOD; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:54:9: error: pointers are not permitted as case values
+   54 |         case GPIOE: gpio_port = GPIOE; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:55:9: error: pointers are not permitted as case values
+   55 |         case GPIOF: gpio_port = GPIOF; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:56:9: error: pointers are not permitted as case values
+   56 |         case GPIOG: gpio_port = GPIOG; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:57:9: error: pointers are not permitted as case values
+   57 |         case GPIOH: gpio_port = GPIOH; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:61:28: error: expected expression before '<<' token
+   61 |     gpio_port->MODER &= ~( << )
+      |                            ^~
+../Core/Src/GPIO_driver.c:61:32: error: expected ';' before '}' token
+   61 |     gpio_port->MODER &= ~( << )
+      |                                ^
+      |                                ;
+   62 | }
+      | ~                               
+../Core/Src/GPIO_driver.c: At top level:
+../Core/Src/GPIO_driver.c:71:6: error: conflicting types for 'GPIO_ReadPin'; have 'void(GPIO_Port,  GPIO_PinNumber)'
+   71 | void GPIO_ReadPin(GPIO_Port port, GPIO_PinNumber pin);
+      |      ^~~~~~~~~~~~
+../Core/Inc/GPIO_driver.h:143:9: note: previous declaration of 'GPIO_ReadPin' with type 'uint8_t(GPIO_Port,  GPIO_PinNumber)' {aka 'unsigned char(GPIO_Port,  GPIO_PinNumber)'}
+  143 | uint8_t GPIO_ReadPin(GPIO_Port port, GPIO_PinNumber pin);
+      |         ^~~~~~~~~~~~
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+make: *** [Core/Src/subdir.mk:37: Core/Src/GPIO_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+00:54:37 **** Incremental Build of configuration Debug for project baremetal_driver_usart_spi_i2c ****
+make -j4 all 
+arm-none-eabi-size  baremetal_driver_usart_spi_i2c.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1452	      4	   1580	   3036	    bdc	baremetal_driver_usart_spi_i2c.elf
+Finished building: default.size.stdout
+ 
+00:54:38 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+00:54:38 **** Incremental Build of configuration Debug for project led_blinky_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      4	   1572	   2572	    a0c	led_blinky_baremetal.elf
+Finished building: default.size.stdout
+ 
+00:54:38 **** Incremental Build of configuration Debug for project led_blinky_button_baremetal ****
+make -j4 all 
+arm-none-eabi-size  led_blinky_button_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1064	      4	   1572	   2640	    a50	led_blinky_button_baremetal.elf
+Finished building: default.size.stdout
+ 
+00:54:39 **** Incremental Build of configuration Debug for project mpu6050_baremetal_with_driver ****
+make -j4 all 
+arm-none-eabi-size  mpu6050_baremetal_with_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4764	     84	   1900	   6748	   1a5c	mpu6050_baremetal_with_driver.elf
+Finished building: default.size.stdout
+ 
+00:54:39 **** Incremental Build of configuration Debug for project stm32f446re_driver_gpio_spi_uart_i2c_rcc_nvic ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/GPIO_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/GPIO_driver.d" -MT"Core/Src/GPIO_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/GPIO_driver.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+In file included from ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:156,
+                 from ../Core/Src/GPIO_driver.c:9:
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:469:3: error: conflicting types for 'GPIO_TypeDef'; have 'struct <anonymous>'
+  469 | } GPIO_TypeDef;
+      |   ^~~~~~~~~~~~
+In file included from ../Core/Src/GPIO_driver.c:8:
+../Core/Inc/GPIO_driver.h:94:2: note: previous declaration of 'GPIO_TypeDef' with type 'GPIO_TypeDef'
+   94 | }GPIO_TypeDef;
+      |  ^~~~~~~~~~~~
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1121: warning: "GPIOA" redefined
+ 1121 | #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:107: note: this is the location of the previous definition
+  107 | #define GPIOA   ((GPIO_Typedef *) GPIOA_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1122: warning: "GPIOB" redefined
+ 1122 | #define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:108: note: this is the location of the previous definition
+  108 | #define GPIOB   ((GPIO_Typedef *) GPIOB_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1123: warning: "GPIOC" redefined
+ 1123 | #define GPIOC               ((GPIO_TypeDef *) GPIOC_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:109: note: this is the location of the previous definition
+  109 | #define GPIOC   ((GPIO_Typedef *) GPIOC_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1124: warning: "GPIOD" redefined
+ 1124 | #define GPIOD               ((GPIO_TypeDef *) GPIOD_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:110: note: this is the location of the previous definition
+  110 | #define GPIOD   ((GPIO_Typedef *) GPIOD_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1125: warning: "GPIOE" redefined
+ 1125 | #define GPIOE               ((GPIO_TypeDef *) GPIOE_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:111: note: this is the location of the previous definition
+  111 | #define GPIOE   ((GPIO_Typedef *) GPIOE_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1126: warning: "GPIOF" redefined
+ 1126 | #define GPIOF               ((GPIO_TypeDef *) GPIOF_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:112: note: this is the location of the previous definition
+  112 | #define GPIOF   ((GPIO_Typedef *) GPIOF_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1127: warning: "GPIOG" redefined
+ 1127 | #define GPIOG               ((GPIO_TypeDef *) GPIOG_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:113: note: this is the location of the previous definition
+  113 | #define GPIOG   ((GPIO_Typedef *) GPIOG_BASE_ADDR)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1128: warning: "GPIOH" redefined
+ 1128 | #define GPIOH               ((GPIO_TypeDef *) GPIOH_BASE)
+      | 
+../Core/Inc/GPIO_driver.h:114: note: this is the location of the previous definition
+  114 | #define GPIOH   ((GPIO_Typedef *) GPIOH_BASE_ADDR)
+      | 
+../Core/Src/GPIO_driver.c: In function 'GPIO_Init':
+../Core/Src/GPIO_driver.c:21:9: error: pointers are not permitted as case values
+   21 |         case GPIOA:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:24:9: error: pointers are not permitted as case values
+   24 |         case GPIOB:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:27:9: error: pointers are not permitted as case values
+   27 |         case GPIOC:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:30:9: error: pointers are not permitted as case values
+   30 |         case GPIOD:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:33:9: error: pointers are not permitted as case values
+   33 |         case GPIOE:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:36:9: error: pointers are not permitted as case values
+   36 |         case GPIOF:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:39:9: error: pointers are not permitted as case values
+   39 |         case GPIOG:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:42:9: error: pointers are not permitted as case values
+   42 |         case GPIOH:
+      |         ^~~~
+../Core/Src/GPIO_driver.c:50:9: error: pointers are not permitted as case values
+   50 |         case GPIOA: gpio_port = GPIOA; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:51:9: error: pointers are not permitted as case values
+   51 |         case GPIOB: gpio_port = GPIOB; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:52:9: error: pointers are not permitted as case values
+   52 |         case GPIOC: gpio_port = GPIOC; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:53:9: error: pointers are not permitted as case values
+   53 |         case GPIOD: gpio_port = GPIOD; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:54:9: error: pointers are not permitted as case values
+   54 |         case GPIOE: gpio_port = GPIOE; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:55:9: error: pointers are not permitted as case values
+   55 |         case GPIOF: gpio_port = GPIOF; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:56:9: error: pointers are not permitted as case values
+   56 |         case GPIOG: gpio_port = GPIOG; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:57:9: error: pointers are not permitted as case values
+   57 |         case GPIOH: gpio_port = GPIOH; break;
+      |         ^~~~
+../Core/Src/GPIO_driver.c:61:28: error: expected expression before '<<' token
+   61 |     gpio_port->MODER &= ~( << )
+      |                            ^~
+../Core/Src/GPIO_driver.c:61:32: error: expected ';' before '}' token
+   61 |     gpio_port->MODER &= ~( << )
+      |                                ^
+      |                                ;
+   62 | }
+      | ~                               
+../Core/Src/GPIO_driver.c: At top level:
+../Core/Src/GPIO_driver.c:71:6: error: conflicting types for 'GPIO_ReadPin'; have 'void(GPIO_Port,  GPIO_PinNumber)'
+   71 | void GPIO_ReadPin(GPIO_Port port, GPIO_PinNumber pin);
+      |      ^~~~~~~~~~~~
+../Core/Inc/GPIO_driver.h:143:9: note: previous declaration of 'GPIO_ReadPin' with type 'uint8_t(GPIO_Port,  GPIO_PinNumber)' {aka 'unsigned char(GPIO_Port,  GPIO_PinNumber)'}
+  143 | uint8_t GPIO_ReadPin(GPIO_Port port, GPIO_PinNumber pin);
+      |         ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/GPIO_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+00:55:35 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+00:55:39 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+00:55:49 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+00:56:48 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "internal_button_interrupt.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\internal_button_interrupt\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="internal_button_interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: internal_button_interrupt.elf
+ 
+arm-none-eabi-size  internal_button_interrupt.elf 
+arm-none-eabi-objdump -h -S internal_button_interrupt.elf  > "internal_button_interrupt.list"
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+Finished building: internal_button_interrupt.list
+ 
+00:56:52 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+00:56:54 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+00:56:55 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+00:56:57 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+00:56:59 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+00:59:05 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "internal_button_interrupt.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\internal_button_interrupt\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="internal_button_interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: internal_button_interrupt.elf
+ 
+arm-none-eabi-size  internal_button_interrupt.elf 
+arm-none-eabi-objdump -h -S internal_button_interrupt.elf  > "internal_button_interrupt.list"
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+Finished building: internal_button_interrupt.list
+ 
+00:59:09 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+00:59:15 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+01:01:13 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "internal_button_interrupt.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\internal_button_interrupt\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="internal_button_interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: internal_button_interrupt.elf
+ 
+arm-none-eabi-size  internal_button_interrupt.elf 
+arm-none-eabi-objdump -h -S internal_button_interrupt.elf  > "internal_button_interrupt.list"
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+Finished building: internal_button_interrupt.list
+ 
+01:01:19 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+01:01:22 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+01:01:47 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+01:03:26 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+01:04:30 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+01:05:03 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "internal_button_interrupt.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\internal_button_interrupt\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="internal_button_interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: internal_button_interrupt.elf
+ 
+arm-none-eabi-size  internal_button_interrupt.elf 
+arm-none-eabi-objdump -h -S internal_button_interrupt.elf  > "internal_button_interrupt.list"
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+Finished building: internal_button_interrupt.list
+ 
+01:05:11 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+01:07:05 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "internal_button_interrupt.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\internal_button_interrupt\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="internal_button_interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: internal_button_interrupt.elf
+ 
+arm-none-eabi-size  internal_button_interrupt.elf 
+arm-none-eabi-objdump -h -S internal_button_interrupt.elf  > "internal_button_interrupt.list"
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+Finished building: internal_button_interrupt.list
+ 
+01:07:10 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+01:11:03 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "internal_button_interrupt.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\internal_button_interrupt\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="internal_button_interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: internal_button_interrupt.elf
+ 
+arm-none-eabi-size  internal_button_interrupt.elf 
+arm-none-eabi-objdump -h -S internal_button_interrupt.elf  > "internal_button_interrupt.list"
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+Finished building: internal_button_interrupt.list
+ 
+01:11:08 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+01:11:31 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "internal_button_interrupt.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\internal_button_interrupt\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="internal_button_interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: internal_button_interrupt.elf
+ 
+arm-none-eabi-size  internal_button_interrupt.elf 
+arm-none-eabi-objdump -h -S internal_button_interrupt.elf  > "internal_button_interrupt.list"
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+Finished building: internal_button_interrupt.list
+ 
+01:11:50 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+01:11:54 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+01:43:28 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'init_button_exti':
+../Core/Src/main.c:141:19: error: 'EXTI_FTSR_FT13' undeclared (first use in this function); did you mean 'EXTI_FTSR_TR13'?
+  141 |     EXTI->FTSR |= EXTI_FTSR_FT13;
+      |                   ^~~~~~~~~~~~~~
+      |                   EXTI_FTSR_TR13
+../Core/Src/main.c:141:19: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+02:04:16 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "internal_button_interrupt.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\internal_button_interrupt\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="internal_button_interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: internal_button_interrupt.elf
+ 
+arm-none-eabi-size  internal_button_interrupt.elf 
+arm-none-eabi-objdump -h -S internal_button_interrupt.elf  > "internal_button_interrupt.list"
+   text	   data	    bss	    dec	    hex	filename
+   1212	      4	   1572	   2788	    ae4	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+Finished building: internal_button_interrupt.list
+ 
+02:04:22 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1212	      4	   1572	   2788	    ae4	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+02:05:30 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1212	      4	   1572	   2788	    ae4	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+02:42:06 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "internal_button_interrupt.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\internal_button_interrupt\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="internal_button_interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: internal_button_interrupt.elf
+ 
+arm-none-eabi-size  internal_button_interrupt.elf 
+arm-none-eabi-objdump -h -S internal_button_interrupt.elf  > "internal_button_interrupt.list"
+   text	   data	    bss	    dec	    hex	filename
+   1212	      4	   1572	   2788	    ae4	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+Finished building: internal_button_interrupt.list
+ 

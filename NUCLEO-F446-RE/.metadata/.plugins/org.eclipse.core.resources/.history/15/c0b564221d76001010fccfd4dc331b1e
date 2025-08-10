@@ -1,0 +1,33 @@
+#include "stm32f446xx.h"
+
+// define the gpio port and pin for the onboard led
+#define LED_PORT GPIOA
+#define LED_PIN  5
+#define LED_PIN_POS  (1<< LED_PIN) // setting the led pin to enable
+
+// Define the timer we'll use
+#define TIMER TIM2  TIM2
+#define TIMER_IRQ   TIM2_IRQn
+
+// define the interrupt period in milliseconds
+#define PERIOD_MS  500
+
+
+//initializing the gpio functions
+void init_gpio(void)
+{
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN; // enablin the rccc clock for the ahb1 peripheral bus
+
+    // configure the PAS% as gneral purpos input-output pin
+    // clear the mode bits(bits 10 and 11)
+    LED_PORT->MODER &= ~(GPIO_MODER_MODE5_Msk);// i'm choosing a port then choosing register for that port then resetting them using &= ~() mask 
+    LED_PORT->MODER |= GPIO_MODER_MODER5_0; //
+}
+
+//initializing the timer functions
+
+void init_timer(void)
+{
+    // Enable the clock for TIM2
+    RCC->AHB1ENR |= RCC_AHB1ENR_TIM2EN;
+}
