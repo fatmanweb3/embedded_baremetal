@@ -140,7 +140,7 @@ void GPIO_DeInit(GPIO_PinConfig_t port);
 void GPIO_WritePin(GPIO_Port port, GPIO_PinNumber pin, uint8_t value);
 
 // reading a gpio pin
-uint8_t GPIO_ReadPin(GPIO_Port port, GPIO_PinNumber pin);
+void GPIO_ReadPin(GPIO_Port port, GPIO_PinNumber pin);
 
 // // toggling a pin
 void GPIO_TogglePin(GPIO_Port port, GPIO_PinNumber pin);

@@ -15,7 +15,6 @@ void GPIO_Init(GPIO_PinConfig_t *pinconfig)
 {
     // get the gpio periphral pointer based on the port
     GPIO_TypeDef *gpio_port = NULL;
-
     switch (pinconfig->port)
     {
         case GPIOA:
@@ -42,7 +41,7 @@ void GPIO_Init(GPIO_PinConfig_t *pinconfig)
         case GPIOH:
         	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOHEN;
 			break;
-        default: return;
+
     }
 
     switch (pinconfig->port)
@@ -50,15 +49,13 @@ void GPIO_Init(GPIO_PinConfig_t *pinconfig)
         case GPIOA: gpio_port = GPIOA; break;
         case GPIOB: gpio_port = GPIOB; break;
         case GPIOC: gpio_port = GPIOC; break;
-        case GPIOD: gpio_port = GPIOD; break;
-        case GPIOE: gpio_port = GPIOE; break;
-        case GPIOF: gpio_port = GPIOF; break;
-        case GPIOG: gpio_port = GPIOG; break;
+        case GPIOC: gpio_port = GPIOD; break;
+        case GPIOD: gpio_port = GPIOF; break;
+        case GPIOF: gpio_port = GPIOG; break;
         case GPIOH: gpio_port = GPIOH; break;
+        
         default: return;
     }
-
-    gpio_port->MODER &= ~( << )
 }
 
 //deinitializing a port

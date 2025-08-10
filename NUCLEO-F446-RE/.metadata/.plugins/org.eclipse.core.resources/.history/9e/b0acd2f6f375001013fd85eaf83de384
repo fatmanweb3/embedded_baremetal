@@ -15,7 +15,6 @@ void GPIO_Init(GPIO_PinConfig_t *pinconfig)
 {
     // get the gpio periphral pointer based on the port
     GPIO_TypeDef *gpio_port = NULL;
-
     switch (pinconfig->port)
     {
         case GPIOA:
