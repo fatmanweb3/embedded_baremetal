@@ -1,0 +1,16 @@
+#include "stm32f446xx.h"
+
+
+
+void init_pwm(void);
+
+int main(void)
+{
+	init_pwm();
+	while(1)
+	{
+
+	}
+}
+
+

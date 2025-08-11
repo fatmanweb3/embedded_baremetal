@@ -1,4 +1,4 @@
-03:13:30 **** Incremental Build of configuration Debug for project internal_timer_interrupts ****
+10:03:26 **** Incremental Build of configuration Debug for project internal_timer_interrupts ****
 make -j4 all 
 arm-none-eabi-size  internal_timer_interrupts.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  internal_timer_interrupts.elf
 Finished building: default.size.stdout
  
 
-03:13:30 Build Finished. 0 errors, 0 warnings. (took 323ms)
+10:03:27 Build Finished. 0 errors, 0 warnings. (took 333ms)
 

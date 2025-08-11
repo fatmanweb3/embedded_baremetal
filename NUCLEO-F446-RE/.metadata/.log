@@ -792,3 +792,39 @@ org.eclipse.core.runtime.CoreException: attempt to set description for a project
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-08-11 03:04:33.003
 !MESSAGE Indexed 'internal_timer_interrupts' (19 sources, 81 headers) in 1.59 sec: 4,564 declarations; 22,097 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0075%)
+!SESSION 2025-08-11 08:16:57.275 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-08-11 08:17:32.926
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-08-11 08:17:32.927
+!MESSAGE Log4j2 initialized with config file D:\embedded_c\Bare Metal\NUCLEO-F446-RE\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-08-11 08:17:46.268
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-11 08:33:59.426
+!MESSAGE Indexed 'PWM_LED_Dimming_with_TIMER' (19 sources, 81 headers) in 2.75 sec: 4,564 declarations; 22,097 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0075%)
+!SESSION 2025-08-11 16:16:11.274 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2025-08-11 16:22:15.192
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-08-11 16:22:35.320
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-08-11 16:22:35.321
+!MESSAGE Log4j2 initialized with config file D:\embedded_c\Bare Metal\NUCLEO-F446-RE\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-08-11 16:22:50.804
+!MESSAGE Started RMI Server, listening on port 41337
