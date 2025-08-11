@@ -26,10 +26,11 @@ void tim2_init(void)
 
     TIM2->ARR = 999; // setting the priod that is to the auto reload register to 999 to generate a desired 1khz frequency 
 
-    TIM2->CCR1 = 1000;
+    TIM2->CCR1 = 250;
 
-    TIM2->CCMR1 |= (TIM_CCMR1_OC1M_1 | TIM_CCMR1_OC1M_2); // CAPTURE COMPARE MDOE REGISTER
+    TIM2->CCMR1 |= (TIM_CCMR1_OC1M_1 ); // CAPTURE COMPARE MDOE REGISTER
 
+    TIM2->CCMR1 |= TIM_CCMR1_OC1PE;
 
     TIM2->CCER |= TIM_CCER_CC1E; // ENABLING THE CAPTURE COMPARE ENABLE REIGSTER
 
@@ -51,6 +52,4 @@ int main(void)
     }
 
 }
-
-
 

@@ -4581,3 +4581,423 @@ arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf
    1448	      8	   1576	   3032	    bd8	PWM_LED_Dimming_with_TIMER.elf
 Finished building: default.size.stdout
  
+17:19:30 **** Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_LED_Dimming_with_TIMER.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\PWM_LED_Dimming_with_TIMER\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_LED_Dimming_with_TIMER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_LED_Dimming_with_TIMER.elf
+ 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+arm-none-eabi-objdump -h -S PWM_LED_Dimming_with_TIMER.elf  > "PWM_LED_Dimming_with_TIMER.list"
+   text	   data	    bss	    dec	    hex	filename
+   1104	      4	   1572	   2680	    a78	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_LED_Dimming_with_TIMER.list
+ 
+17:19:33 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "internal_button_interrupt.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\internal_button_interrupt\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="internal_button_interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: internal_button_interrupt.elf
+ 
+arm-none-eabi-size  internal_button_interrupt.elf 
+arm-none-eabi-objdump -h -S internal_button_interrupt.elf  > "internal_button_interrupt.list"
+   text	   data	    bss	    dec	    hex	filename
+   1212	      4	   1572	   2788	    ae4	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+Finished building: internal_button_interrupt.list
+ 
+17:19:35 **** Incremental Build of configuration Debug for project internal_timer_interrupts ****
+make -j4 all 
+arm-none-eabi-size  internal_timer_interrupts.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_timer_interrupts.elf
+Finished building: default.size.stdout
+ 
+17:19:45 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1104	      4	   1572	   2680	    a78	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+17:19:46 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1212	      4	   1572	   2788	    ae4	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+17:19:46 **** Incremental Build of configuration Debug for project internal_timer_interrupts ****
+make -j4 all 
+arm-none-eabi-size  internal_timer_interrupts.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_timer_interrupts.elf
+Finished building: default.size.stdout
+ 
+17:19:57 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1104	      4	   1572	   2680	    a78	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+17:20:50 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_LED_Dimming_with_TIMER.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\PWM_LED_Dimming_with_TIMER\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_LED_Dimming_with_TIMER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_LED_Dimming_with_TIMER.elf
+ 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+arm-none-eabi-objdump -h -S PWM_LED_Dimming_with_TIMER.elf  > "PWM_LED_Dimming_with_TIMER.list"
+   text	   data	    bss	    dec	    hex	filename
+   1104	      4	   1572	   2680	    a78	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_LED_Dimming_with_TIMER.list
+ 
+17:20:51 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1212	      4	   1572	   2788	    ae4	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+17:20:51 **** Incremental Build of configuration Debug for project internal_timer_interrupts ****
+make -j4 all 
+arm-none-eabi-size  internal_timer_interrupts.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_timer_interrupts.elf
+Finished building: default.size.stdout
+ 
+17:20:56 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1104	      4	   1572	   2680	    a78	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+17:26:26 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_LED_Dimming_with_TIMER.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\PWM_LED_Dimming_with_TIMER\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_LED_Dimming_with_TIMER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_LED_Dimming_with_TIMER.elf
+ 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+arm-none-eabi-objdump -h -S PWM_LED_Dimming_with_TIMER.elf  > "PWM_LED_Dimming_with_TIMER.list"
+   text	   data	    bss	    dec	    hex	filename
+   1096	      4	   1572	   2672	    a70	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_LED_Dimming_with_TIMER.list
+ 
+17:26:27 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1212	      4	   1572	   2788	    ae4	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+17:26:28 **** Incremental Build of configuration Debug for project internal_timer_interrupts ****
+make -j4 all 
+arm-none-eabi-size  internal_timer_interrupts.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_timer_interrupts.elf
+Finished building: default.size.stdout
+ 
+17:26:31 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1096	      4	   1572	   2672	    a70	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+17:27:28 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_LED_Dimming_with_TIMER.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\PWM_LED_Dimming_with_TIMER\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_LED_Dimming_with_TIMER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_LED_Dimming_with_TIMER.elf
+ 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+arm-none-eabi-objdump -h -S PWM_LED_Dimming_with_TIMER.elf  > "PWM_LED_Dimming_with_TIMER.list"
+   text	   data	    bss	    dec	    hex	filename
+   1128	      4	   1572	   2704	    a90	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_LED_Dimming_with_TIMER.list
+ 
+17:27:29 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1212	      4	   1572	   2788	    ae4	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+17:27:29 **** Incremental Build of configuration Debug for project internal_timer_interrupts ****
+make -j4 all 
+arm-none-eabi-size  internal_timer_interrupts.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_timer_interrupts.elf
+Finished building: default.size.stdout
+ 
+17:27:36 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1128	      4	   1572	   2704	    a90	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+17:27:36 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1212	      4	   1572	   2788	    ae4	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+17:27:37 **** Incremental Build of configuration Debug for project internal_timer_interrupts ****
+make -j4 all 
+arm-none-eabi-size  internal_timer_interrupts.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_timer_interrupts.elf
+Finished building: default.size.stdout
+ 
+17:27:41 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1128	      4	   1572	   2704	    a90	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+17:28:07 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_LED_Dimming_with_TIMER.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\PWM_LED_Dimming_with_TIMER\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_LED_Dimming_with_TIMER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_LED_Dimming_with_TIMER.elf
+ 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+arm-none-eabi-objdump -h -S PWM_LED_Dimming_with_TIMER.elf  > "PWM_LED_Dimming_with_TIMER.list"
+   text	   data	    bss	    dec	    hex	filename
+   1112	      4	   1572	   2688	    a80	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_LED_Dimming_with_TIMER.list
+ 
+17:28:08 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1212	      4	   1572	   2788	    ae4	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+17:28:08 **** Incremental Build of configuration Debug for project internal_timer_interrupts ****
+make -j4 all 
+arm-none-eabi-size  internal_timer_interrupts.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_timer_interrupts.elf
+Finished building: default.size.stdout
+ 
+17:28:11 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1112	      4	   1572	   2688	    a80	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+17:28:33 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_LED_Dimming_with_TIMER.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\PWM_LED_Dimming_with_TIMER\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_LED_Dimming_with_TIMER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_LED_Dimming_with_TIMER.elf
+ 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+arm-none-eabi-objdump -h -S PWM_LED_Dimming_with_TIMER.elf  > "PWM_LED_Dimming_with_TIMER.list"
+   text	   data	    bss	    dec	    hex	filename
+   1112	      4	   1572	   2688	    a80	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_LED_Dimming_with_TIMER.list
+ 
+17:28:34 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1212	      4	   1572	   2788	    ae4	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+17:28:35 **** Incremental Build of configuration Debug for project internal_timer_interrupts ****
+make -j4 all 
+arm-none-eabi-size  internal_timer_interrupts.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_timer_interrupts.elf
+Finished building: default.size.stdout
+ 
+17:28:37 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1112	      4	   1572	   2688	    a80	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+17:29:09 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_LED_Dimming_with_TIMER.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\PWM_LED_Dimming_with_TIMER\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_LED_Dimming_with_TIMER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_LED_Dimming_with_TIMER.elf
+ 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+arm-none-eabi-objdump -h -S PWM_LED_Dimming_with_TIMER.elf  > "PWM_LED_Dimming_with_TIMER.list"
+   text	   data	    bss	    dec	    hex	filename
+   1112	      4	   1572	   2688	    a80	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_LED_Dimming_with_TIMER.list
+ 
+17:29:10 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1212	      4	   1572	   2788	    ae4	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+17:29:10 **** Incremental Build of configuration Debug for project internal_timer_interrupts ****
+make -j4 all 
+arm-none-eabi-size  internal_timer_interrupts.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_timer_interrupts.elf
+Finished building: default.size.stdout
+ 
+17:29:14 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1112	      4	   1572	   2688	    a80	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+17:29:29 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_LED_Dimming_with_TIMER.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\PWM_LED_Dimming_with_TIMER\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_LED_Dimming_with_TIMER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_LED_Dimming_with_TIMER.elf
+ 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+arm-none-eabi-objdump -h -S PWM_LED_Dimming_with_TIMER.elf  > "PWM_LED_Dimming_with_TIMER.list"
+   text	   data	    bss	    dec	    hex	filename
+   1112	      4	   1572	   2688	    a80	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_LED_Dimming_with_TIMER.list
+ 
+17:29:30 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1212	      4	   1572	   2788	    ae4	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+17:29:31 **** Incremental Build of configuration Debug for project internal_timer_interrupts ****
+make -j4 all 
+arm-none-eabi-size  internal_timer_interrupts.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_timer_interrupts.elf
+Finished building: default.size.stdout
+ 
+17:29:35 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1112	      4	   1572	   2688	    a80	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+17:29:59 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_LED_Dimming_with_TIMER.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\PWM_LED_Dimming_with_TIMER\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_LED_Dimming_with_TIMER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_LED_Dimming_with_TIMER.elf
+ 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+arm-none-eabi-objdump -h -S PWM_LED_Dimming_with_TIMER.elf  > "PWM_LED_Dimming_with_TIMER.list"
+   text	   data	    bss	    dec	    hex	filename
+   1096	      4	   1572	   2672	    a70	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_LED_Dimming_with_TIMER.list
+ 
+17:30:01 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1212	      4	   1572	   2788	    ae4	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+17:30:01 **** Incremental Build of configuration Debug for project internal_timer_interrupts ****
+make -j4 all 
+arm-none-eabi-size  internal_timer_interrupts.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_timer_interrupts.elf
+Finished building: default.size.stdout
+ 
+17:30:05 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1096	      4	   1572	   2672	    a70	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+17:31:50 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PWM_LED_Dimming_with_TIMER.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\PWM_LED_Dimming_with_TIMER\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_LED_Dimming_with_TIMER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWM_LED_Dimming_with_TIMER.elf
+ 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+arm-none-eabi-objdump -h -S PWM_LED_Dimming_with_TIMER.elf  > "PWM_LED_Dimming_with_TIMER.list"
+   text	   data	    bss	    dec	    hex	filename
+   1096	      4	   1572	   2672	    a70	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWM_LED_Dimming_with_TIMER.list
+ 
+17:31:51 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1212	      4	   1572	   2788	    ae4	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+17:31:52 **** Incremental Build of configuration Debug for project internal_timer_interrupts ****
+make -j4 all 
+arm-none-eabi-size  internal_timer_interrupts.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_timer_interrupts.elf
+Finished building: default.size.stdout
+ 
+17:32:04 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1096	      4	   1572	   2672	    a70	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
+17:32:04 **** Incremental Build of configuration Debug for project internal_button_interrupt ****
+make -j4 all 
+arm-none-eabi-size  internal_button_interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1212	      4	   1572	   2788	    ae4	internal_button_interrupt.elf
+Finished building: default.size.stdout
+ 
+17:32:05 **** Incremental Build of configuration Debug for project internal_timer_interrupts ****
+make -j4 all 
+arm-none-eabi-size  internal_timer_interrupts.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1156	      4	   1572	   2732	    aac	internal_timer_interrupts.elf
+Finished building: default.size.stdout
+ 
+17:32:08 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+make -j4 all 
+arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1096	      4	   1572	   2672	    a70	PWM_LED_Dimming_with_TIMER.elf
+Finished building: default.size.stdout
+ 
