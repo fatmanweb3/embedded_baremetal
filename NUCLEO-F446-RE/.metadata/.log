@@ -889,3 +889,27 @@ java.lang.NullPointerException: Cannot invoke "com.st.stm32cube.common.mx.target
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-08-12 08:44:54.860
 !MESSAGE Indexed 'usart2_low_level_with_pwm' (19 sources, 81 headers) in 2.73 sec: 4,564 declarations; 22,097 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0075%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-12 14:05:08.383
+!MESSAGE Indexed 'timers_baremetal' (20 sources, 82 headers) in 2.69 sec: 5,042 declarations; 26,639 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0063%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-12 14:57:42.866
+!MESSAGE Indexed 'timers_counting_interrupt_baremetal' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+!SESSION 2025-08-12 15:02:26.062 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2025-08-12 15:02:43.701
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-08-12 15:03:09.430
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-08-12 15:03:09.433
+!MESSAGE Log4j2 initialized with config file D:\embedded_c\Bare Metal\NUCLEO-F446-RE\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-08-12 15:03:28.231
+!MESSAGE Started RMI Server, listening on port 41337

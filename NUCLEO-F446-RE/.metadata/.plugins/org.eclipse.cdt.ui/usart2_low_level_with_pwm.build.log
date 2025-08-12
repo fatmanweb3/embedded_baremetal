@@ -1,10 +1,10 @@
-10:33:40 **** Incremental Build of configuration Debug for project usart2_low_level_with_pwm ****
+14:31:28 **** Incremental Build of configuration Debug for project usart2_low_level_with_pwm ****
 make -j4 all 
 arm-none-eabi-size  usart2_low_level_with_pwm.elf 
    text	   data	    bss	    dec	    hex	filename
-   1596	      4	   1572	   3172	    c64	usart2_low_level_with_pwm.elf
+   1448	      4	   1572	   3024	    bd0	usart2_low_level_with_pwm.elf
 Finished building: default.size.stdout
  
 
-10:33:40 Build Finished. 0 errors, 0 warnings. (took 317ms)
+14:31:28 Build Finished. 0 errors, 0 warnings. (took 316ms)
 

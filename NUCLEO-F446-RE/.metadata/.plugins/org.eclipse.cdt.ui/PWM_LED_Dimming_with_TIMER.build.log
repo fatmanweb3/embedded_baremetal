@@ -1,4 +1,4 @@
-10:33:36 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
+14:31:25 **** Incremental Build of configuration Debug for project PWM_LED_Dimming_with_TIMER ****
 make -j4 all 
 arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  PWM_LED_Dimming_with_TIMER.elf
 Finished building: default.size.stdout
  
 
-10:33:36 Build Finished. 0 errors, 0 warnings. (took 327ms)
+14:31:26 Build Finished. 0 errors, 0 warnings. (took 324ms)
 

@@ -1,0 +1,10 @@
+14:31:31 **** Incremental Build of configuration Debug for project timers_baremetal ****
+make -j4 all 
+arm-none-eabi-size  timers_baremetal.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1180	      4	   1572	   2756	    ac4	timers_baremetal.elf
+Finished building: default.size.stdout
+ 
+
+14:31:31 Build Finished. 0 errors, 0 warnings. (took 269ms)
+
