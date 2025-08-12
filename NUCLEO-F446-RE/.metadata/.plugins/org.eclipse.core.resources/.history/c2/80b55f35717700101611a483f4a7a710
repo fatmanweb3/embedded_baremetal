@@ -1,0 +1,102 @@
+#include "stm32f446xx.h"
+#include "stdint.h"
+
+#define FADE_STEPS 1001
+#define TOTAL_STEPS (FADE_STEPS * 2 - 2) // 0->1000->0
+
+static uint16_t fade_pattern[TOTAL_STEPS];
+
+void generate_fade_pattern(void) {
+    // Fade up
+    for (int i = 0; i < FADE_STEPS; i++) {
+        fade_pattern[i] = i;
+    }
+    // Fade down
+    for (int i = FADE_STEPS; i < TOTAL_STEPS; i++) {
+        fade_pattern[i] = TOTAL_STEPS - i;
+    }
+}
+
+void rcc_init(void)
+{
+    // Enable GPIOA, TIM2, DMA1
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+    RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
+    RCC->AHB1ENR |= RCC_AHB1ENR_DMA1EN;
+    (void)RCC->AHB1ENR; // dummy read to ensure clock ready
+}
+
+void gpio_init(void)
+{
+    // PA5 as Alternate Function (AF1 = TIM2_CH1)
+    GPIOA->MODER &= ~(GPIO_MODER_MODER5_Msk);
+    GPIOA->MODER |= (2U << GPIO_MODER_MODER5_Pos); // AF mode
+
+    GPIOA->AFR[0] &= ~(GPIO_AFRL_AFSEL5_Msk);
+    GPIOA->AFR[0] |= (1U << GPIO_AFRL_AFSEL5_Pos); // AF1
+}
+
+void tim2_init(void)
+{
+    // Timer clock: adjust PSC for desired PWM frequency
+    TIM2->PSC = 15999;      // Prescaler
+    TIM2->ARR = 99;     // 1000 steps => 1 kHz if timer tick = 1 MHz
+    TIM2->CCR1 = 0;      // start at 0% duty
+
+    // PWM Mode 1 on CH1
+    TIM2->CCMR1 &= ~(TIM_CCMR1_OC1M_Msk);
+    TIM2->CCMR1 |= (6U << TIM_CCMR1_OC1M_Pos); // PWM mode 1
+    TIM2->CCMR1 |= TIM_CCMR1_OC1PE;            // preload enable
+
+    // Enable CH1 output
+    TIM2->CCER |= TIM_CCER_CC1E;
+
+    // Enable ARR preload
+    TIM2->CR1 |= TIM_CR1_ARPE;
+
+    // Enable DMA request on update event
+    TIM2->DIER |= TIM_DIER_UDE;
+}
+
+void dma_init(void)
+{
+    DMA1_Stream2->CR &= ~DMA_SxCR_EN;
+    while (DMA1_Stream2->CR & DMA_SxCR_EN);
+
+    DMA1_Stream2->PAR = (uint32_t)&TIM2->CCR1;
+    DMA1_Stream2->M0AR = (uint32_t)fade_pattern;
+    DMA1_Stream2->NDTR = TOTAL_STEPS;
+
+    DMA1_Stream2->CR =
+        (3U << DMA_SxCR_CHSEL_Pos) |   // Channel 3 = TIM2_UP
+        DMA_SxCR_PL_1 |
+        DMA_SxCR_MSIZE_0 |             // 16-bit memory
+        DMA_SxCR_PSIZE_0 |             // 16-bit peripheral
+        DMA_SxCR_MINC |
+        DMA_SxCR_CIRC |
+        DMA_SxCR_DIR_0;                // mem -> periph
+
+    DMA1_Stream2->FCR = 0;             // Direct mode
+
+    DMA1_Stream2->CR |= DMA_SxCR_EN;   // Enable DMA
+
+    TIM2->DIER |= TIM_DIER_UDE;        // Enable DMA request on update
+}
+
+
+int main(void)
+{
+    generate_fade_pattern();
+    rcc_init();
+    gpio_init();
+    tim2_init();
+    dma_init();
+
+    // Start TIM2
+    TIM2->CR1 |= TIM_CR1_CEN;
+
+    while (1)
+    {
+        // sleep until event (optional)
+    }
+}

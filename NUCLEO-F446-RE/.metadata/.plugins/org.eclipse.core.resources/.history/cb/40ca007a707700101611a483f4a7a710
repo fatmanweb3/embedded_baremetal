@@ -1,0 +1,131 @@
+#include "stm32f446xx.h"
+#include "stdint.h"
+
+#define FADE_STEPS 1001
+#define TOTAL_STEPS (FADE_STEPS * 2 - 2) // 0->1000->0
+
+static uint16_t fade_pattern[TOTAL_STEPS];
+
+void generate_fade_pattern(void) {
+    for (int i = 0; i < FADE_STEPS; i++) {
+        fade_pattern[i] = i;        // rise 0..1000
+    }
+    for (int i = FADE_STEPS; i < TOTAL_STEPS; i++) {
+        fade_pattern[i] = TOTAL_STEPS - i; // fall 999..1
+    }
+}
+
+void rcc_init(void)
+{
+    // enable clocks: GPIOA, TIM2, TIM3, DMA1
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+    RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
+    RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;
+    RCC->AHB1ENR |= RCC_AHB1ENR_DMA1EN;
+
+    // small delay to ensure clocks are ready (read back)
+    volatile uint32_t tmp = RCC->AHB1ENR;
+    (void)tmp;
+}
+
+void gpio_init(void)
+{
+    // PA5 as AF (TIM2_CH1 -> AF1)
+    GPIOA->MODER &= ~(GPIO_MODER_MODER5_Msk);
+    GPIOA->MODER |= (2U << GPIO_MODER_MODER5_Pos); // AF mode
+    // AFRL uses 4 bits per pin; AF1 for PA5
+    GPIOA->AFR[0] &= ~(GPIO_AFRL_AFSEL5_Msk);
+    GPIOA->AFR[0] |= (1U << GPIO_AFRL_AFSEL5_Pos); // AF1 = TIM2_CH1
+}
+
+void tim2_init(void)
+{
+    // Basic PWM: prescaler and ARR choose your frequency
+    TIM2->PSC = 15;     // prescale 16 -> timer tick
+    TIM2->ARR = 999;    // 0..999 => 1000 steps
+    TIM2->CCR1 = 0;
+
+    // CH1 PWM mode 1 (OC1M = 110), enable preload on OC1
+    TIM2->CCMR1 &= ~(TIM_CCMR1_OC1M_Msk);
+    TIM2->CCMR1 |= (6U << TIM_CCMR1_OC1M_Pos); // PWM mode 1
+    TIM2->CCMR1 |= TIM_CCMR1_OC1PE;
+
+    // enable capture/compare 1 output
+    TIM2->CCER |= TIM_CCER_CC1E;
+
+    // auto-reload preload and enable counter
+    TIM2->CR1 |= TIM_CR1_ARPE;
+    TIM2->CR1 |= TIM_CR1_CEN;
+}
+
+void tim3_trigger_init(void)
+{
+    // TIM3 generates update events at desired step rate.
+    // Example: if APB1 timer clock = 16 MHz (adjust to your clock),
+    // set PSC and ARR accordingly. Here PSC=15999 -> tick = 1kHz if baseclk 16MHz
+    TIM3->PSC = 15999; // adjust to your clock domain
+    TIM3->ARR = 9;     // 10 ms per update -> example 100 updates/sec
+
+    // Make sure update -> DMA request enabled (UDE)
+    TIM3->DIER |= TIM_DIER_UDE;
+
+    // Note: do NOT enable UIE if you don't want IRQ (we removed toggling PA5)
+    // TIM3->DIER |= TIM_DIER_UIE; // not used here
+
+    // start timer
+    TIM3->CR1 |= TIM_CR1_CEN;
+}
+
+void dma_init(void)
+{
+    // We'll use DMA1_Stream2, Channel 5 (commonly maps to TIM3_UP on many F4 parts).
+    // Before changing CR, disable stream
+    DMA1_Stream2->CR &= ~DMA_SxCR_EN;
+    while (DMA1_Stream2->CR & DMA_SxCR_EN) { /* wait until disabled */ }
+
+    // Peripheral address: TIM2->CCR1
+    DMA1_Stream2->PAR = (uint32_t)&TIM2->CCR1;
+
+    // Memory address: pattern buffer
+    DMA1_Stream2->M0AR = (uint32_t)fade_pattern;
+
+    // Number of data items
+    DMA1_Stream2->NDTR = TOTAL_STEPS;
+
+    // Clear CR and FCR (we'll set config fresh)
+    DMA1_Stream2->CR = 0;
+    DMA1_Stream2->FCR = 0;
+
+    // Configure: Channel 5, high priority, memory/periph size = 16-bit,
+    // memory increment, circular mode, direction = memory->peripheral
+    DMA1_Stream2->CR =
+        (5U << DMA_SxCR_CHSEL_Pos) |   // channel 5
+        DMA_SxCR_PL_1 |                // priority high (01)
+        DMA_SxCR_MSIZE_0 |             // memory size = 16-bit (01)
+        DMA_SxCR_PSIZE_0 |             // peripheral size = 16-bit (01)
+        DMA_SxCR_MINC |                // increment memory address
+        DMA_SxCR_CIRC |                // circular mode
+        DMA_SxCR_DIR_0;                // DIR = 01 memory-to-peripheral
+
+    // Ensure FIFO disabled (direct mode)
+    DMA1_Stream2->FCR = 0;
+
+    // Enable stream
+    DMA1_Stream2->CR |= DMA_SxCR_EN;
+}
+
+int main(void)
+{
+    generate_fade_pattern();
+    rcc_init();
+    gpio_init();
+    tim2_init();
+    tim3_trigger_init();
+    dma_init();
+
+    // Main loop: nothing to do; DMA + TIM3 updates TIM2->CCR1 continuously
+    while (1)
+    {
+
+    }
+}

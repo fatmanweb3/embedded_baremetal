@@ -1,0 +1,10 @@
+17:23:17 **** Incremental Build of configuration Debug for project timer_pwm_dma ****
+make -j4 all 
+arm-none-eabi-size  timer_pwm_dma.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1424	      4	   5572	   7000	   1b58	timer_pwm_dma.elf
+Finished building: default.size.stdout
+ 
+
+17:23:17 Build Finished. 0 errors, 0 warnings. (took 270ms)
+

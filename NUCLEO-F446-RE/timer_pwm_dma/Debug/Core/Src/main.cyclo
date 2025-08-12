@@ -1,0 +1,6 @@
+../Core/Src/main.c:9:6:generate_fade_pattern	4
+../Core/Src/main.c:29:6:rcc_init	1
+../Core/Src/main.c:38:6:gpio_init	1
+../Core/Src/main.c:48:6:tim2_init	1
+../Core/Src/main.c:70:6:dma_init	2
+../Core/Src/main.c:97:5:main	1

@@ -916,3 +916,6 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-08-12 15:06:08.469
 !MESSAGE Indexed 'timer_pwm' (20 sources, 82 headers) in 4.46 sec: 5,042 declarations; 26,639 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0063%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-12 16:12:05.855
+!MESSAGE Indexed 'timer_pwm_dma' (19 sources, 81 headers) in 2.24 sec: 4,564 declarations; 22,097 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0075%)
