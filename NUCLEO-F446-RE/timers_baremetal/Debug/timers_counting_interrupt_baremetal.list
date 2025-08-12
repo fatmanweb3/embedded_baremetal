@@ -1,5 +1,5 @@
 
-timers_baremetal.elf:     file format elf32-littlearm
+timers_counting_interrupt_baremetal.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
