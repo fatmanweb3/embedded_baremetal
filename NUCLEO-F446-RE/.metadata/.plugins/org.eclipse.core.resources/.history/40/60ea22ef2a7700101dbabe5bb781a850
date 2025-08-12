@@ -1,0 +1,6 @@
+#include "stdint.h"
+#include "stm32f446xx.h"
+
+#define USART2_AF 7U
+
+#define MODER_AF 2U

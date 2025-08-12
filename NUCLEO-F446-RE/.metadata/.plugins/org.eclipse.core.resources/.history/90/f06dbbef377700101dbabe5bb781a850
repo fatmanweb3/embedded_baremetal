@@ -1,0 +1,109 @@
+#include "stdint.h"
+#include "stm32f446xx.h"
+
+#define USART2_AF 7U
+
+#define MODER_AF 2U
+
+#define OSPEEDR_HIGHSPEED 3U
+
+
+void delay_ms(uint32_t ms)
+{
+    // crude delay for 16 MHz clock
+    for(uint32_t i = 0; i < (ms * 4000); i++)
+    {
+        __NOP();
+    }
+}
+
+void rcc_init(void)
+{
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+
+	RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
+
+	RCC->APB1ENR |= RCC_APB1ENR_USART2EN;
+}
+
+void usart2_gpio_init(void)
+{
+	// SETTING MODER FOR PIN FUNCTIONS
+	GPIOA->MODER &= ~(GPIO_MODER_MODER2_Msk | GPIO_MODER_MODER3_Msk);
+
+	GPIOA->MODER |= (MODER_AF << (GPIO_MODER_MODER2_Pos));
+	
+	GPIOA->MODER |= (MODER_AF << GPIO_MODER_MODER3_Pos);
+
+	// SETTING FUCTIONS FOR SPEED AND PULL UP DOWN CONFIG
+	GPIOA->OTYPER &= ~(GPIO_OTYPER_OT2 | GPIO_OTYPER_OT3);
+
+	GPIOA->OSPEEDR |= (OSPEEDR_HIGHSPEED << GPIO_OSPEEDR_OSPEED2_Pos) |  (OSPEEDR_HIGHSPEED << GPIO_OSPEEDR_OSPEED3_Pos);
+
+	GPIOA->PUPDR &= ~(GPIO_PUPDR_PUPD2_Msk | GPIO_PUPDR_PUPD3_Msk);
+
+	GPIOA->PUPDR |= (0U << GPIO_PUPDR_PUPD2_Pos) | (1U << GPIO_PUPDR_PUPD3_Pos);
+
+	// SETTING THE ALTERNATE FUCNTION
+	GPIOA->AFR[0] &= ~(GPIO_AFRL_AFSEL2_Msk | GPIO_AFRL_AFSEL3_Msk);
+	
+	GPIOA->AFR[0] |= (USART2_AF << (GPIO_AFRL_AFSEL2_Pos ));
+
+	GPIOA->AFR[0] |= (USART2_AF << (GPIO_AFRL_AFSEL3_Pos));
+	
+}
+
+void usart2_init(uint32_t baudrate)
+{
+	uint32_t pclk1 = 16000000; // Replace with real APB1 freq
+
+	USART2->BRR = pclk1 / baudrate;
+	
+	USART2->CR1 &= ~(USART_CR1_M_Msk | USART_CR1_PCE_Msk);
+
+	USART2->CR2 &= ~(USART_CR2_STOP);
+
+	USART2->CR1 |= USART_CR1_TE | USART_CR1_RE;
+
+	USART2->CR1 |= USART_CR1_UE;
+}
+
+void usart2_write_char(char ch)
+{
+	while(!(USART2->SR & USART_SR_TXE));
+	USART2->DR = (uint8_t)ch;
+}
+
+char usart2_read_char(void)
+{
+	while(!(USART2->SR & USART_SR_RXNE));
+	return((char) USART2->DR & 0xFF);
+}
+
+void usart2_write_String(const char *str)
+{
+	while(*str)
+	{
+		usart2_write_char(*str++);
+	}
+}
+
+int main(void)
+{
+	rcc_init();
+	usart2_gpio_init();
+	usart2_init(115200);
+
+	while(1)
+	{
+		usart2_write_String("MA NA VA YA SI\r\n");
+
+		if(USART2->SR & USART_SR_RXNE)
+		{
+			char c = usart2_read_char();
+			usart2_write_String("the received char is: ");
+			usart2_write_char(c);
+			usart2_write_String("\r\n\r\n");
+		}
+	}
+}

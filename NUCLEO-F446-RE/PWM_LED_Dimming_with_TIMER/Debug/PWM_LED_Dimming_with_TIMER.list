@@ -119,7 +119,7 @@ void gpio_init(void)
  8000238:	4a0d      	ldr	r2, [pc, #52]	@ (8000270 <gpio_init+0x40>)
  800023a:	f423 6340 	bic.w	r3, r3, #3072	@ 0xc00
  800023e:	6013      	str	r3, [r2, #0]
-    GPIOA->MODER |= GPIO_MODER_MODER5_1; //SETTING IT FOR ALTERNATE FUNCTION MODE 
+    GPIOA->MODER |= (2U << GPIO_MODER_MODER5_Pos); //SETTING IT FOR ALTERNATE FUNCTION MODE 
  8000240:	4b0b      	ldr	r3, [pc, #44]	@ (8000270 <gpio_init+0x40>)
  8000242:	681b      	ldr	r3, [r3, #0]
  8000244:	4a0a      	ldr	r2, [pc, #40]	@ (8000270 <gpio_init+0x40>)
@@ -132,7 +132,7 @@ void gpio_init(void)
  8000250:	4a07      	ldr	r2, [pc, #28]	@ (8000270 <gpio_init+0x40>)
  8000252:	f423 0370 	bic.w	r3, r3, #15728640	@ 0xf00000
  8000256:	6213      	str	r3, [r2, #32]
-    GPIOA->AFR[0] |= GPIO_AFRL_AFSEL5_0;
+    GPIOA->AFR[0] |= (1U << GPIO_AFRL_AFSEL5_Pos);
  8000258:	4b05      	ldr	r3, [pc, #20]	@ (8000270 <gpio_init+0x40>)
  800025a:	6a1b      	ldr	r3, [r3, #32]
  800025c:	4a04      	ldr	r2, [pc, #16]	@ (8000270 <gpio_init+0x40>)
