@@ -1,0 +1,10 @@
+11:48:41 **** Incremental Build of configuration Debug for project I2C_16x2_LCD_WITH BARE_METAL_DRIVER ****
+make -j4 all 
+arm-none-eabi-size  I2C_16x2_LCD_WITH\ BARE_METAL_DRIVER.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10000	     12	   1652	  11664	   2d90	I2C_16x2_LCD_WITH BARE_METAL_DRIVER.elf
+Finished building: default.size.stdout
+ 
+
+11:48:42 Build Finished. 0 errors, 0 warnings. (took 340ms)
+
