@@ -60,8 +60,8 @@ all: main-build
 main-build: internal_timer_interrupts.elf secondary-outputs
 
 # Tool invocations
-internal_timer_interrupts.elf internal_timer_interrupts.map: $(OBJS) $(USER_OBJS) D:\embedded_c\Bare\ Metal\NUCLEO-F446-RE\internal_timer_interrupts\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "internal_timer_interrupts.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\internal_timer_interrupts\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="internal_timer_interrupts.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+internal_timer_interrupts.elf internal_timer_interrupts.map: $(OBJS) $(USER_OBJS) D:\embedded_c\Bare\ Metal\NUCLEO-F446-RE\baremetal_refernces\internal_timer_interrupts\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "internal_timer_interrupts.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\embedded_c\Bare Metal\NUCLEO-F446-RE\baremetal_refernces\internal_timer_interrupts\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="internal_timer_interrupts.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

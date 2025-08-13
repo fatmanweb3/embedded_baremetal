@@ -43,7 +43,7 @@
      TIMER->DIER |= TIM_DIER_UIE; // dma/interrupt reload register, eie menas update interrupt enable.
 
      // Enable the TIM2 interrupt in the Nested Vector Interrupt Controller (NVIC)
-     NVIC_EnableIRQ(TIMER_IRQ); // irq means interrupt request.
+     NVIC_EnableIRQ(TIM2_IRQn); // irq means interrupt request.
 
      // start the timer
      TIMER->CR1 |= TIM_CR1_CEN; // counter enable

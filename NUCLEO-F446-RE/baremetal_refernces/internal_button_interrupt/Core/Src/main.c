@@ -79,6 +79,7 @@ void init_button_exti(void)
     // 5. Unmask the interrupt for EXTI line 13
     // This allows the interrupt signal to be sent to the NVIC
     EXTI->IMR |= EXTI_IMR_IM13;// SETTING THE INTERRUPT MASK REGIST FOR 13 PIN TO ENABLE THE PIN FOR ALLOWING IT TO SEND SIGNAL TO NVIC
+
     // IMR MEANS INTERRUPT MASK REGISTER
     NVIC_EnableIRQ(BUTTON_EXTI_IRQ);
 }
@@ -88,7 +89,7 @@ void EXTI15_10_IRQHandler(void)
 {
     if(EXTI->PR & EXTI_PR_PR13)
     {
-        GPIOC->ODR ^= GPIO_ODR_OD5; //THIS IS BASICALLY ( 1U << 5U )
+        GPIOA->ODR ^= GPIO_ODR_OD5; //THIS IS BASICALLY ( 1U << 5U )
 
         // Clear the interrupt pending flag by writing a '1' to it
 

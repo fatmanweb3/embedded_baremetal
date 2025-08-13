@@ -39,13 +39,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   00001f2d  00000000  00000000  0001d088  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000c1656  00000000  00000000  0001efb5  2**0
+ 18 .debug_str    000c166a  00000000  00000000  0001efb5  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  000e060b  2**0
+ 19 .comment      00000043  00000000  00000000  000e061f  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000005ac  00000000  00000000  000e0650  2**2
+ 20 .debug_frame  000005ac  00000000  00000000  000e0664  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000070  00000000  00000000  000e0bfc  2**0
+ 21 .debug_line_str 00000084  00000000  00000000  000e0c10  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -255,6 +255,7 @@ void init_button_exti(void)
  80002f8:	4a06      	ldr	r2, [pc, #24]	@ (8000314 <init_button_exti+0x54>)
  80002fa:	f443 5300 	orr.w	r3, r3, #8192	@ 0x2000
  80002fe:	6013      	str	r3, [r2, #0]
+
     // IMR MEANS INTERRUPT MASK REGISTER
     NVIC_EnableIRQ(BUTTON_EXTI_IRQ);
  8000300:	2028      	movs	r0, #40	@ 0x28
@@ -281,7 +282,7 @@ void EXTI15_10_IRQHandler(void)
  8000324:	2b00      	cmp	r3, #0
  8000326:	d00b      	beq.n	8000340 <EXTI15_10_IRQHandler+0x28>
     {
-        GPIOC->ODR ^= GPIO_ODR_OD5; //THIS IS BASICALLY ( 1U << 5U )
+        GPIOA->ODR ^= GPIO_ODR_OD5; //THIS IS BASICALLY ( 1U << 5U )
  8000328:	4b09      	ldr	r3, [pc, #36]	@ (8000350 <EXTI15_10_IRQHandler+0x38>)
  800032a:	695b      	ldr	r3, [r3, #20]
  800032c:	4a08      	ldr	r2, [pc, #32]	@ (8000350 <EXTI15_10_IRQHandler+0x38>)
@@ -304,7 +305,7 @@ void EXTI15_10_IRQHandler(void)
  8000348:	4770      	bx	lr
  800034a:	bf00      	nop
  800034c:	40013c00 	.word	0x40013c00
- 8000350:	40020800 	.word	0x40020800
+ 8000350:	40020000 	.word	0x40020000
 
 08000354 <NMI_Handler>:
 /******************************************************************************/

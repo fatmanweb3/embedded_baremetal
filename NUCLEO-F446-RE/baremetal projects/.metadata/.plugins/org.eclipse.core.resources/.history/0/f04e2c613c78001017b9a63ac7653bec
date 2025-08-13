@@ -1,0 +1,112 @@
+#include "stm32f446xx.h"
+
+// Macros
+#define SENSOR_PORT GPIOA
+#define SENSOR_PIN  0
+#define TIMER       TIM2
+#define ADC_IRQ     ADC_IRQn
+#define USART       USART2
+#define USART_IRQ   USART2_IRQn
+#define PERIOD_MS   500
+
+// Function prototypes
+void init_gpio(void);
+void init_adc(void);
+void init_timer(void);
+void init_usart(void);
+void usart_send_string(const char *str);
+void usart_send_number(uint16_t num);
+
+// GPIO configuration for ADC (PA0) and USART2 (PA2 TX, PA3 RX)
+void init_gpio(void) {
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN; // Enable GPIOA clock
+    // PA0: Analog mode for ADC
+    SENSOR_PORT->MODER |= GPIO_MODER_MODER0; // Analog mode (11)
+    // PA2: USART2 TX (AF7), PA3: USART2 RX (AF7)
+    SENSOR_PORT->MODER &= ~(GPIO_MODER_MODER2 | GPIO_MODER_MODER3); // Clear mode
+    SENSOR_PORT->MODER |= GPIO_MODER_MODER2_1 | GPIO_MODER_MODER3_1; // Alternate function (10)
+    SENSOR_PORT->AFR[0] |= (7 << 8) | (7 << 12); // AF7 for PA2, PA3 (USART2)
+}
+
+// ADC configuration for channel 0 (PA0), triggered by TIM2 TRGO
+void init_adc(void) {
+    RCC->APB2ENR |= RCC_APB2ENR_ADC1EN; // Enable ADC1 clock
+    ADC1->SQR3 = 0; // Channel 0 (PA0)
+    ADC1->CR2 |= ADC_CR2_EXTEN_0 | ADC_CR2_EXTSEL_0; // Trigger on TIM2 TRGO
+    ADC1->IER |= ADC_IER_EOCIE; // Enable end-of-conversion interrupt
+    ADC1->CR2 |= ADC_CR2_ADON; // Enable ADC
+    NVIC_SetPriority(ADC_IRQ, 1);
+    NVIC_EnableIRQ(ADC_IRQ);
+    usart_send_string("ADC initialized\r\n");
+}
+
+// Timer configuration for 500 ms period, TRGO on update
+void init_timer(void) {
+    RCC->APB1ENR |= RCC_APB1ENR_TIM2EN; // Enable TIM2 clock
+    TIM2->PSC = 15999; // 16 MHz / (15999+1) = 1 kHz
+    TIM2->ARR = 499; // 1000 Hz / 2 Hz = 500 ms
+    TIM2->CR2 |= TIM_CR2_MMS_1; // TRGO on update event
+    TIM2->CR1 |= TIM_CR1_CEN; // Start timer
+    usart_send_string("Timer initialized\r\n");
+}
+
+// USART2 configuration for 115200 baud, PA2 (TX), PA3 (RX)
+void init_usart(void) {
+    RCC->APB1ENR |= RCC_APB1ENR_USART2EN; // Enable USART2 clock
+    USART->BRR = 16000000 / 115200; // 16 MHz / 115200 baud = ~139
+    USART->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE; // Enable TX, RX, USART
+    usart_send_string("USART2 initialized\r\n");
+}
+
+// Send string via USART2
+void usart_send_string(const char *str) {
+    while (*str) {
+        while (!(USART->SR & USART_SR_TXE)); // Wait for TX buffer empty
+        USART->DR = *str++; // Send character
+    }
+    while (!(USART->SR & USART_SR_TC)); // Wait for transmission complete
+}
+
+// Send number as string via USART2
+void usart_send_number(uint16_t num) {
+    char buffer[10];
+    int i = 0;
+    if (num == 0) {
+        buffer[i++] = '0';
+    } else {
+        while (num) {
+            buffer[i++] = (num % 10) + '0';
+            num /= 10;
+        }
+    }
+    // Reverse string
+    for (int j = 0; j < i / 2; j++) {
+        char temp = buffer[j];
+        buffer[j] = buffer[i - 1 - j];
+        buffer[i - 1 - j] = temp;
+    }
+    buffer[i] = '\0';
+    usart_send_string(buffer);
+}
+
+// ADC interrupt handler
+void ADC_IRQHandler(void) {
+    if (ADC1->SR & ADC_SR_EOC) {
+        usart_send_string("ADC conversion complete, value: ");
+        uint16_t adc_value = ADC1->DR; // Read ADC result
+        usart_send_number(adc_value); // Send value
+        usart_send_string("\r\n");
+        ADC1->SR &= ~ADC_SR_EOC; // Clear flag
+    }
+}
+
+int main(void) {
+    init_usart(); // Initialize USART first for debug output
+    init_gpio();
+    init_adc();
+    init_timer();
+    usart_send_string("System initialized\r\n");
+    while (1) {
+        // Main loop idle
+    }
+}

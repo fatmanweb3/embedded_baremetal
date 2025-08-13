@@ -1,0 +1,99 @@
+#include "stm32f446xx.h"
+
+// define the gpio port and pin for the onboard led
+#define LED_PORT GPIOA
+#define LED_PIN  5
+#define LED_PIN_POS  (1U << LED_PIN) // setting the led pin to enable
+
+// defining port for internal button
+#define BUTTON_PORT GPIOC
+#define BUTTON_PIN  13
+#define BUTTON_PIN_POS (1U << BUTTON_PIN)
+
+// define the EXTI LINE FOR THE BUTTON
+#define BUTTON_EXTI_IRQ EXTI15_10_IRQn
+
+// Define the timer we'll use
+#define TIMER       TIM2
+#define TIMER_IRQ   TIM2_IRQn
+
+// define the interrupt period in milliseconds
+#define PERIOD_MS  500
+
+//function prototypes
+void init_gpio(void);
+void init_button_exti(void);
+
+// main function
+int main(void)
+{
+    init_gpio();
+    init_button_exti();
+
+    while (1)
+    {
+        /* code */
+    }
+   
+}
+
+void init_gpio(void)
+{
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;// ENABLING THE AHB 1 BUS FOR GPIOA
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN; // ENABLING THE AHB1 BUS GPIOC PORT
+
+    //CONFIGURING THE PAS5 INTERNAL LED AS THE OUTPUT PIN
+    LED_PORT->MODER &= ~(GPIO_MODER_MODER5_Msk); // THIS SETS THE PORT A MASK FOR IT 
+
+    LED_PORT->MODER |= GPIO_MODER_MODER5_0;// THIS sETS THE PIN TO OUTPUT MODE
+
+    //configuring the button for default input mode adn setting the pull up down configurations
+
+    BUTTON_PORT->MODER &= ~(GPIO_MODER_MODER13_Msk);// CLEARING THE 13 PIN SO I CAN SET THE PIN TO DEFAULT INPUT MODE
+
+    BUTTON_PORT->PUPDR &= ~(GPIO_PUPDR_PUPD13_Msk); // CLEARING THE PULL UP DOWN CONFIGURATION SO I CAN CLEAR THE SETTING
+    BUTTON_PORT->PUPDR |= GPIO_PUPDR_PUPD13_0; // this is basically (1U << 26U) this is pull up _1 means pull down
+
+}
+
+void init_button_exti(void)
+{
+    // enabling the clock for ssyconfig becuase it is connected in apb2 buss
+    RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;
+
+    //SYSCFG CONTROLS THE EXTI 
+    // NOW I HAVE CHOOSE THE13 PIN FOR THE INTERUTP TRIGGERING 
+    // SINCE EACH CR REGISTER CONTROLS 4 EXTI INTERRUPTS I wanted to control them perfectly.
+    //cr4 has the control of pin 12- pin 15
+    SYSCFG->EXTICR[3] &= ~(SYSCFG_EXTICR4_EXTI13_Msk);// SETTING THE SYSCFG A MASK TO CLEAR THE REGISTER
+
+    SYSCFG->EXTICR[3] |= SYSCFG_EXTICR4_EXTI13_PC;
+
+    // CONFIGURING THE EXTI LINE TO TRIGGER ON A FALLING EDGE.
+    //ftsr means falling edge selection trigger
+    // The button connects to ground when pressed, causing a high-to-low transition.
+
+    EXTI->FTSR |= EXTI_FTSR_TR13; // SETTING THE FALLING EDGE TRIGGER FOR PIN 13
+
+    //CONFIGURING THE INTERRUPT SIGNAL TO BE SENT 
+    // 5. Unmask the interrupt for EXTI line 13
+    // This allows the interrupt signal to be sent to the NVIC
+    EXTI->IMR |= EXTI_IMR_IM13;// SETTING THE INTERRUPT MASK REGIST FOR 13 PIN TO ENABLE THE PIN FOR ALLOWING IT TO SEND SIGNAL TO NVIC
+    // IMR MEANS INTERRUPT MASK REGISTER
+    NVIC_EnableIRQ(BUTTON_EXTI_IRQ);
+}
+
+
+void EXTI15_10_IRQHandler(void)
+{
+    if(EXTI->PR & EXTI_PR_PR13)
+    {
+        GPIOC->ODR ^= GPIO_ODR_OD5; //THIS IS BASICALLY ( 1U << 5U )
+
+        // Clear the interrupt pending flag by writing a '1' to it
+
+        EXTI->PR |= EXTI_PR_PR13;
+    }
+}
+
+

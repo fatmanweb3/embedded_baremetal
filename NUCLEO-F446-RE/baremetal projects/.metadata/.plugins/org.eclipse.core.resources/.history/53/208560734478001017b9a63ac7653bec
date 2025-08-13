@@ -1,0 +1,155 @@
+#include "stm32f446xx.h"
+#include <stdint.h>
+#include <stdio.h>
+
+#define SYSCLK_FREQ     16000000UL  // Internal HSI 16 MHz
+#define BAUDRATE        115200
+
+// //---------------- USART2 ----------------//
+// void USART2_Init(void) {
+//     // 1. Enable clocks
+//     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;     // Enable GPIOA clock
+//     RCC->APB1ENR |= RCC_APB1ENR_USART2EN;    // Enable USART2 clock
+
+//     // 2. Set PA2 (TX) and PA3 (RX) to Alternate Function mode (AF7)
+//     GPIOA->MODER &= ~((GPIO_MODER_MODE2_Msk) | (GPIO_MODER_MODE3_Msk)); // Clear
+//     GPIOA->MODER |= (GPIO_MODER_MODE2_1) | (GPIO_MODER_MODE3_1);        // 10: Alternate Function
+
+//     GPIOA->AFR[0] &= ~((GPIO_AFRL_AFSEL2_Msk) | (GPIO_AFRL_AFSEL3_Msk)); // Clear AF
+//     GPIOA->AFR[0] |= (7 << GPIO_AFRL_AFSEL2_Pos) | (7 << GPIO_AFRL_AFSEL3_Pos); // AF7
+
+//     // 3. Set baud rate
+//     USART2->BRR = SYSCLK_FREQ / BAUDRATE; // Simple calculation (oversampling by 16)
+
+//     // 4. Enable TX, RX, and USART
+//     USART2->CR1 = USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+// }
+
+// void USART2_SendChar(char c) {
+//     while (!(USART2->SR & USART_SR_TXE)); // Wait for TX buffer empty
+//     USART2->DR = c;
+// }
+
+// void USART2_SendString(const char *str) {
+//     while (*str) {
+//         USART2_SendChar(*str++);
+//     }
+// }
+
+// //---------------- ADC1 ----------------//
+// void ADC1_Init(void) {
+//     // 1. Enable GPIOA clock
+//     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+
+//     // 2. PA0 to Analog mode
+//     GPIOA->MODER |= GPIO_MODER_MODE0_Msk; // 11: Analog mode
+//     GPIOA->PUPDR &= ~GPIO_PUPDR_PUPD0_Msk; // No pull-up/pull-down
+
+//     // 3. Enable ADC1 clock
+//     RCC->APB2ENR |= RCC_APB2ENR_ADC1EN;
+
+//     // 4. ADC common control: prescaler = PCLK2 / 2
+//     ADC->CCR &= ~ADC_CCR_ADCPRE_Msk; // 00: divide by 2
+
+//     // 5. Set sample time for channel 0 to 56 cycles
+//     ADC1->SMPR2 &= ~ADC_SMPR2_SMP0_Msk;
+//     ADC1->SMPR2 |= (3 << ADC_SMPR2_SMP0_Pos); // 011: 56 cycles
+
+//     // 6. Regular sequence: first conversion = channel 0
+//     ADC1->SQR3 &= ~ADC_SQR3_SQ1_Msk; // Channel 0 = 00000
+
+//     // 7. Enable ADC
+//     ADC1->CR2 |= ADC_CR2_ADON;
+// }
+
+// uint16_t ADC1_Read(void) {
+//     ADC1->CR2 |= ADC_CR2_SWSTART;            // Start conversion
+//     while (!(ADC1->SR & ADC_SR_EOC));        // Wait for conversion complete
+//     return (uint16_t)ADC1->DR;               // Return 12-bit ADC result
+// }
+
+// //---------------- Main ----------------//
+// int main(void) {
+//     char buffer[50];
+//     uint16_t adc_value;
+
+//     USART2_Init();
+//     ADC1_Init();
+
+//     USART2_SendString("ADC1 + USART2 Test\r\n");
+
+//     while (1) {
+//         adc_value = ADC1_Read();
+//         sprintf(buffer, "ADC Value: %u\r\n", adc_value);
+//         USART2_SendString(buffer);
+
+//         for (volatile int i = 0; i < 50000; i++); // Delay
+//     }
+// }
+
+
+#include "stm32f446xx.h"
+#include <stdint.h>
+
+//---------------- ADC1 ----------------//
+void ADC1_Init(void) {
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN; // Enable GPIOA clock
+
+    // PA0 as Analog
+    GPIOA->MODER |= GPIO_MODER_MODE0_Msk;
+    GPIOA->PUPDR &= ~GPIO_PUPDR_PUPD0_Msk;
+
+    RCC->APB2ENR |= RCC_APB2ENR_ADC1EN; // Enable ADC1 clock
+    ADC->CCR &= ~ADC_CCR_ADCPRE_Msk;    // Prescaler /2
+    ADC1->SMPR2 &= ~ADC_SMPR2_SMP0_Msk;
+    ADC1->SMPR2 |= (3 << ADC_SMPR2_SMP0_Pos); // 56 cycles
+    ADC1->SQR3 &= ~ADC_SQR3_SQ1_Msk;    // Channel 0
+    ADC1->CR2 |= ADC_CR2_ADON;          // Enable ADC
+}
+
+uint16_t ADC1_Read(void) {
+    ADC1->CR2 |= ADC_CR2_SWSTART;       // Start conversion
+    while (!(ADC1->SR & ADC_SR_EOC));   // Wait until complete
+    return (uint16_t)ADC1->DR;          // Read result
+}
+
+//---------------- PWM on PA5 ----------------//
+void PWM_PA5_Init(void) {
+    // Enable GPIOA and TIM2 clocks
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+    RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
+
+    // Set PA5 to Alternate Function mode (AF1 for TIM2_CH1)
+    GPIOA->MODER &= ~GPIO_MODER_MODE5_Msk;
+    GPIOA->MODER |= GPIO_MODER_MODE5_1; // AF mode
+    GPIOA->AFR[0] &= ~GPIO_AFRL_AFSEL5_Msk;
+    GPIOA->AFR[0] |= (1 << GPIO_AFRL_AFSEL5_Pos); // AF1
+
+    // Configure TIM2 for PWM
+    TIM2->PSC = 16 - 1;      // Prescaler: 16 MHz / 16 = 1 MHz timer clock
+    TIM2->ARR = 1023;        // Auto-reload: 10-bit resolution
+    TIM2->CCR1 = 0;          // Start with 0% duty
+
+    // PWM mode 1 on CH1, enable preload
+    TIM2->CCMR1 &= ~TIM_CCMR1_OC1M_Msk;
+    TIM2->CCMR1 |= (6 << TIM_CCMR1_OC1M_Pos) | TIM_CCMR1_OC1PE;
+
+    TIM2->CCER |= TIM_CCER_CC1E;  // Enable output on CH1
+    TIM2->CR1 |= TIM_CR1_CEN;     // Enable counter
+}
+
+int main(void) {
+    uint16_t adc_value;
+    uint16_t pwm_duty;
+
+    ADC1_Init();
+    PWM_PA5_Init();
+
+    while (1) {
+        adc_value = ADC1_Read();   // Read ADC (0-4095)
+        pwm_duty = adc_value / 4;  // Map to 0-1023
+        TIM2->CCR1 = pwm_duty;     // Update PWM duty
+    }
+}
+
+

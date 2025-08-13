@@ -1,0 +1,7 @@
+../Core/Src/main.c:92:6:ADC1_Init	1
+../Core/Src/main.c:107:10:ADC1_Read	2
+../Core/Src/main.c:114:6:PWM_PA5_Init	1
+../Core/Src/main.c:140:6:USART2_Init	1
+../Core/Src/main.c:159:6:USART2_SendChar	2
+../Core/Src/main.c:164:6:USART2_SendString	2
+../Core/Src/main.c:170:5:main	2
