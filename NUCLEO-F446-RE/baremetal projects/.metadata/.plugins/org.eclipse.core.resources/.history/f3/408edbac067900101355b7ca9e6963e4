@@ -1,0 +1,75 @@
+#include "stm32f446xx.h"
+#include <stdint.h>
+
+
+static void rcc_init(void)
+{
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN; // FOR GPIO
+
+    RCC->APB2ENR |= RCC_APB2ENR_ADC1EN; // FOR ADC PERIPHERAL
+}
+
+static void gpio_init(void)
+{
+    GPIOA->MODER &= ~((GPIO_MODER_MODER5_Msk) | GPIO_MODER_MODER6_Msk | GPIO_MODER_MODER7_Msk);
+
+    GPIOA->MODER |= GPIO_MODER_MODE5_0 | GPIO_MODER_MODE6_0 | GPIO_MODER_MODE7_0;
+
+    GPIOA->MODER |= (3U << GPIO_MODER_MODER0_Pos);
+    
+}
+
+static void adc_init(void)
+{
+    ADC->CCR &= ~(ADC_CCR_ADCPRE_Msk);
+    
+    ADC1->SMPR2 &= ~ADC_SMPR2_SMP0_Msk;
+    ADC1->SMPR2 |= (7U << ADC_SMPR2_SMP0_Pos);
+
+    ADC1->SQR3 &= ~(ADC_SQR3_SQ1_Msk); // SLECTING THE SEQUENCE 1 
+
+    ADC1->CR2 |= ADC_CR2_ADON; // TURNING ON THE ADC1 
+}
+
+volatile uint16_t adc_read(void)
+{
+    ADC1->CR2 |= ADC_CR2_SWSTART; // STARTING THE CONVERSION
+    while(!(ADC1->SR & ADC_SR_EOC));
+    return (uint16_t)ADC1->DR;
+}
+
+
+static void adc_led_trigger(uint16_t *adc_value)
+{
+    if (*adc_value < 1023)
+    {
+        GPIOA->ODR |= GPIO_ODR_OD5;
+        GPIOA->ODR &= ~(GPIO_ODR_OD6 | GPIO_ODR_OD7);
+
+    }
+    else if (*adc_value > 1365 && *adc_value < 2700)
+    {
+        GPIOA->ODR |= GPIO_ODR_OD6;
+        GPIOA->ODR &= ~(GPIO_ODR_OD5 | GPIO_ODR_OD7);
+
+    }
+    else if (*adc_value > 3000 )
+    {
+        GPIOA->ODR |= GPIO_ODR_OD7;
+        GPIOA->ODR &= ~(GPIO_ODR_OD5 | GPIO_ODR_OD6);
+    }
+
+}
+
+int main(void)
+{
+    rcc_init();
+    gpio_init();
+    adc_init();
+
+    while(1)
+    {
+        uint16_t value = adc_read();
+        adc_led_trigger(&value);
+    }
+}

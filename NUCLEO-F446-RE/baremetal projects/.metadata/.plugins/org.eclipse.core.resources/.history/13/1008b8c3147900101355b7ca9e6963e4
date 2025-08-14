@@ -1,0 +1,193 @@
+#include "stm32f446xx.h"
+#include <stdint.h>
+
+
+/* ====== Config ====== */
+#define USE_STEADY_LED   1   // 1: steady ON per range; 0: toggle on each DMA TC
+
+
+static volatile uint16_t adc_value;
+
+static void rcc_init(void)
+{
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN; // FOR GPIO
+
+    RCC->APB2ENR |= RCC_APB2ENR_ADC1EN; // FOR ADC PERIPHERAL
+
+    RCC->AHB1ENR |= RCC_AHB1ENR_DMA2EN; //ENABLING THE DMA
+}
+
+static void gpio_init(void)
+{
+    GPIOA->MODER &= ~((GPIO_MODER_MODER5_Msk) | GPIO_MODER_MODER6_Msk | GPIO_MODER_MODER7_Msk);
+
+    GPIOA->MODER |= GPIO_MODER_MODE5_0 | GPIO_MODER_MODE6_0 | GPIO_MODER_MODE7_0;
+
+    GPIOA->MODER &= ~GPIO_MODER_MODER0_Msk;
+
+    GPIOA->MODER |= (3U << GPIO_MODER_MODER0_Pos);
+    /* Start with all LEDs OFF */
+    GPIOA->ODR &= ~(GPIO_ODR_OD5 | GPIO_ODR_OD6 | GPIO_ODR_OD7);
+    
+}
+
+static void adc_init(void)
+{
+
+    /* ADC prescaler: default /2 is fine (ADC->CCR ADCPRE = 00) */
+
+    ADC->CCR &= ~(ADC_CCR_ADCPRE_Msk);
+    
+    /* Sample time for channel 0: choose long to ease source impedance (e.g., 84 cycles) */
+
+    ADC1->SMPR2 &= ~ADC_SMPR2_SMP0_Msk;
+    ADC1->SMPR2 |= (7U << ADC_SMPR2_SMP0_Pos);
+
+    /* Regular sequence: length = 1 conversion (L = 0) */
+    ADC1->SQR1 &= ~ADC_SQR1_L_Msk;              // L = 0 => 1 conversion
+    ADC1->SQR1 |= (0U << ADC_SQR1_L_Pos);
+    /* SQ1 = channel 0 (PA0) */
+    ADC1->SQR3 &= ~ADC_SQR3_SQ1_Msk;            // channel 0 -> value 0
+    ADC1->SQR3 |= (0U << ADC_SQR3_SQ1_Pos); // channel 0
+
+
+    ADC1->CR2 |= ADC_CR2_CONT; //ENABLING CONTINUOS CONVERSION
+    ADC1->CR2 |= ADC_CR2_DMA; // ENABLING THE DIRECT MEMORY ACCESS
+    ADC1->CR2 |= ADC_CR2_DDS; // ENABLING THE DMA DIABLE SELECTION FOR SINGLE ADC MODE
+
+    ADC1->CR2 |= ADC_CR2_ADON; // TURNING ON THE ADC1 
+}
+
+/* ====== DMA2 Stream0 Channel0 for ADC1 ======
+   Mapping (F4): ADC1 -> DMA2, Stream 0, Channel 0
+*/
+static void dma2_stream0_init_for_adc1(void)
+{
+    if (DMA2_Stream0->CR & DMA_SxCR_EN)
+    {
+        DMA2_Stream0->CR &= ~DMA_SxCR_EN;
+        while (DMA2_Stream0->CR & DMA_SxCR_EN)
+        {
+
+        }
+    }
+
+    DMA2->LIFCR = DMA_LIFCR_CFEIF0 | DMA_LIFCR_CDMEIF0 | DMA_LIFCR_CTEIF0 | DMA_LIFCR_CHTIF0 | DMA_LIFCR_CTCIF0 ;
+
+    /* Peripheral address: ADC1->DR */
+    DMA2_Stream0->PAR  = (uint32_t)&ADC1->DR;
+    /* Memory address: variable to hold latest ADC sample */
+    DMA2_Stream0->M0AR = (uint32_t)&adc_value;
+    /* Number of transfers: 1 (we just want the latest sample, circularly updated) */
+    DMA2_Stream0->NDTR = 1;
+
+    /* Configure CR:
+       - CHSEL = 0 (Channel 0)
+       - DIR = 00 (Peripheral-to-memory)
+       - CIRC = 1 (Circular)
+       - MINC = 0 (no memory increment, single variable)
+       - PINC = 0
+       - PSIZE = 01 (16-bit halfword)
+       - MSIZE = 01 (16-bit halfword)
+       - PL = 01 (optional: medium priority)
+       - TCIE = 1 (transfer complete interrupt)
+       - PFCTRL = 0 (DMA flow controller)
+    */
+    DMA2_Stream0->CR = 
+        (0U << DMA_SxCR_CHSEL_Pos) |     /* Channel 0 */
+        (0U << DMA_SxCR_DIR_Pos)    |     /* Periph-to-Mem */
+        DMA_SxCR_CIRC              |     /* Circular mode */
+        (0U << DMA_SxCR_MINC_Pos)  |     /* Memory increment OFF */
+        (0U << DMA_SxCR_PINC_Pos)  |
+        (1U << DMA_SxCR_PSIZE_Pos) |     /* PSIZE = 16-bit */
+        (1U << DMA_SxCR_MSIZE_Pos) |     /* MSIZE = 16-bit */
+        (1U << DMA_SxCR_PL_Pos)    |     /* Medium priority */
+        DMA_SxCR_TCIE;                   /* Transfer complete IRQ */
+
+    /* FIFO: disable FIFO (direct mode) */
+    DMA2_Stream0->FCR = 0;
+
+    /*Enable NVIC for DMA2 Stream 0IRQ*/
+    NVIC_ClearPendingIRQ(DMA2_Stream0_IRQn);
+    NVIC_SetPriority(DMA2_Stream0_IRQn, 5);
+    NVIC_EnableIRQ(DMA2_Stream0_IRQn);
+
+    //finally enabling the dma stream
+    DMA2_Stream0->CR |=DMA_SxCR_EN;
+
+}
+
+static void adc1_start(void)
+{
+    /* Software trigger, EXTEN = 00 (disabled), SWSTART = 1 */
+
+    ADC1->CR2 &= ~(ADC_CR2_EXTEN);
+    ADC1->CR2 |= ADC_CR2_SWSTART; // STARTING THE CONVERSION
+
+}
+
+/* ====== LED update (called from IRQ) ====== */
+static inline void leds_update_from_adc(uint16_t v)
+{
+#if USE_STEADY_LED
+    if (v < 1023)
+    {
+        GPIOA->ODR |=  GPIO_ODR_OD5;
+        GPIOA->ODR &= ~(GPIO_ODR_OD6 | GPIO_ODR_OD7);
+    }
+    else if (v > 1365 && v < 2700)
+    {
+        GPIOA->ODR |=  GPIO_ODR_OD6;
+        GPIOA->ODR &= ~(GPIO_ODR_OD5 | GPIO_ODR_OD7);
+    }
+    else if (v > 3000)
+    {
+        GPIOA->ODR |=  GPIO_ODR_OD7;
+        GPIOA->ODR &= ~(GPIO_ODR_OD5 | GPIO_ODR_OD6);
+    }
+    /* values in the gaps keep previous state; add an else to force OFF if you want */
+#else
+    /* Toggle-on-match style */
+    if (v < 1023)
+    {
+        GPIOA->ODR ^= GPIO_ODR_OD5;
+        GPIOA->ODR &= ~(GPIO_ODR_OD6 | GPIO_ODR_OD7);
+    }
+    else if (v > 1365 && v < 2700)
+    {
+        GPIOA->ODR ^= GPIO_ODR_OD6;
+        GPIOA->ODR &= ~(GPIO_ODR_OD5 | GPIO_ODR_OD7);
+    }
+    else if (v > 3000)
+    {
+        GPIOA->ODR ^= GPIO_ODR_OD7;
+        GPIOA->ODR &= ~(GPIO_ODR_OD5 | GPIO_ODR_OD6);
+    }
+#endif
+}
+
+void DMA2_Stream0_IRQHandler(void)
+{
+    /* Check Transfer Complete flag for Stream0 (low flag reg: TCIF0) */
+    if (DMA2->LISR & DMA_LISR_TCIF0)
+    {
+        DMA2->LIFCR = DMA_LIFCR_CTCIF0;
+
+        leds_update_from_adc(adc_value);
+    }
+}
+
+
+int main(void)
+{
+    rcc_init();
+    gpio_init();
+    adc_init();
+    dma2_stream0_init_for_adc1();
+    adc1_start();
+
+    while(1)
+    {
+        
+    }
+}

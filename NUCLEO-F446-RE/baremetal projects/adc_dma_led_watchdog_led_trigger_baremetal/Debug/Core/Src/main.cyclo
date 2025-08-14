@@ -1,0 +1,11 @@
+../Drivers/CMSIS/Include/core_cm4.h:1684:22:__NVIC_EnableIRQ	2
+../Drivers/CMSIS/Include/core_cm4.h:1775:22:__NVIC_ClearPendingIRQ	2
+../Drivers/CMSIS/Include/core_cm4.h:1814:22:__NVIC_SetPriority	2
+../Core/Src/main.c:11:13:rcc_init	1
+../Core/Src/main.c:20:13:gpio_init	1
+../Core/Src/main.c:34:13:adc_init	1
+../Core/Src/main.c:66:13:dma2_stream0_init_for_adc1	3
+../Core/Src/main.c:122:13:adc1_start	1
+../Core/Src/main.c:132:20:leds_update_from_adc	5
+../Core/Src/main.c:171:6:DMA2_Stream0_IRQHandler	2
+../Core/Src/main.c:183:5:main	1

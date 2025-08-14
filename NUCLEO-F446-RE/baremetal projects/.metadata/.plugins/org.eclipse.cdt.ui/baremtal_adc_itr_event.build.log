@@ -1,4 +1,4 @@
-18:27:40 **** Incremental Build of configuration Debug for project baremtal_adc_itr_event ****
+17:18:33 **** Incremental Build of configuration Debug for project baremtal_adc_itr_event ****
 make -j4 all 
 arm-none-eabi-size  baremtal_adc_itr_event.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  baremtal_adc_itr_event.elf
 Finished building: default.size.stdout
  
 
-18:27:41 Build Finished. 0 errors, 0 warnings. (took 314ms)
+17:18:33 Build Finished. 0 errors, 0 warnings. (took 323ms)
 
