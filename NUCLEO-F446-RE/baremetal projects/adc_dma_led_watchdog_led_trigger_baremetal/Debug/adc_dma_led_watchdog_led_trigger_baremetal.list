@@ -477,7 +477,6 @@ static void dma2_stream0_init_for_adc1(void)
  8000452:	4a03      	ldr	r2, [pc, #12]	@ (8000460 <dma2_stream0_init_for_adc1+0x74>)
  8000454:	f043 0301 	orr.w	r3, r3, #1
  8000458:	6013      	str	r3, [r2, #0]
-
 }
  800045a:	bf00      	nop
  800045c:	bd80      	pop	{r7, pc}
@@ -636,7 +635,6 @@ void DMA2_Stream0_IRQHandler(void)
  800055c:	20000020 	.word	0x20000020
 
 08000560 <main>:
-
 
 int main(void)
 {

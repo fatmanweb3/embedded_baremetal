@@ -1,0 +1,10 @@
+16:21:03 **** Incremental Build of configuration Debug for project industrial_servo_control_with_pwm_adc ****
+make -j4 all 
+arm-none-eabi-size  industrial_servo_control_with_pwm_adc.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1436	      4	   1572	   3012	    bc4	industrial_servo_control_with_pwm_adc.elf
+Finished building: default.size.stdout
+ 
+
+16:21:03 Build Finished. 0 errors, 0 warnings. (took 319ms)
+
